@@ -1,2 +1,2 @@
 let tg = window.Telegram.WebApp;
-tg.BackButton.isVisible = true;
+tg.BackButton.show();
