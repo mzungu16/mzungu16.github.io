@@ -1,33 +1,79 @@
-<!doctype html>
-<html class="no-js" lang="">
+<html lang="ru">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <script>
+    function sessionStorageSet(key, value) {
+      try {
+        window.sessionStorage.setItem('__telegram__' + key, JSON.stringify(value));
+        return true;
+      } catch (e) {
+      }
+      return false;
+    }
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+    function sessionStorageGet(key) {
+      try {
+        return JSON.parse(window.sessionStorage.getItem('__telegram__' + key));
+      } catch (e) {
+      }
+      return null;
+    }
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+    var appTgVersion = '9.0';
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+    var initParams = sessionStorageGet('initParams');
+    if (initParams) {
+      if (!initParams.tgWebAppVersion) {
+        initParams.tgWebAppVersion = appTgVersion;
+      }
+    } else {
+      initParams = {
+        tgWebAppVersion: appTgVersion
+      };
+    }
+
+    sessionStorageSet('initParams', initParams);
+  </script>
+  <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Document</title>
 </head>
-
 <body>
-
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
-
+<div class="container">
+  <div class="sub_inner">
+    <div class="item">
+      <div class="card_image">
+        <img src="https://i.postimg.cc/fWKQXRst/500a3512e536162c204f.jpg"
+             alt="mixed vegetable salad in a mason jar."/>
+      </div>
+      <button class="btn" id="btnSoup">Супы</button>
+    </div>
+    <div class="item">
+      <div class="card_image">
+        <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
+             alt="mixed vegetable salad in a mason jar."/>
+      </div>
+      <button class="btn" id="btnDishes">Вторые блюда</button>
+    </div>
+    <div class="item">
+      <div class="card_image">
+        <img
+          src="https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg"
+          alt="mixed vegetable salad in a mason jar."/>
+      </div>
+      <button class="btn" id="btnLunch">Закуски</button>
+    </div>
+    <div class="item">
+      <div class="card_image">
+        <img src="https://i.postimg.cc/kMwLGYNW/912-original.jpg" alt="mixed vegetable salad in a mason jar."/>
+      </div>
+      <button class="btn" id="btnDrink">Напитки</button>
+    </div>
+  </div>
+</div>
+<script src="../js/script.js"></script>
+<script src="../js/tgscript.js"></script>
 </body>
-
 </html>
