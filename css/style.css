@@ -80,25 +80,23 @@ body {
 }
 
 .item {
-  margin: 5px;
+  padding: 4px 5px 21px;
   position: relative;
   width: auto;
   height: auto;
   box-sizing: border-box;
   text-align: center;
   background: var(--tg-theme-section-bg-color);
-  border-radius: 20px;
 }
 
 .food_item {
-  margin: 5px;
+  padding: 4px 5px 21px;
   position: relative;
   width: 150px;
   height: auto;
   box-sizing: border-box;
   text-align: center;
   background: var(--tg-theme-section-bg-color);
-  border-radius: 20px;
 }
 
 .btn {
