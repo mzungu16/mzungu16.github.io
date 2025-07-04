@@ -30,11 +30,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  gap: 10px;
+  column-gap: 20px;
 }
 
 .card_text {
-  margin: 1px;
+  margin:0;
   padding: 5px;
 }
 
@@ -59,16 +59,16 @@ body {
 }
 
 .card_image img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 80%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
 }
 
 .card_image_item img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 50%;
   border-radius: 10px;
   object-fit: cover;
 }
