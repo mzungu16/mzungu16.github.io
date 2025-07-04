@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 10px;
-  background-color: var("--tg-theme-bg-color");
+  background: var("--tg-theme-bg-color");
   color-scheme: var(--tg-color-scheme);
   font-weight: 400;
   font-family: var(--default-font);
