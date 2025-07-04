@@ -24,7 +24,7 @@ body {
 .sub_inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: 200px 200px;
   gap: 10px;
 }
 
