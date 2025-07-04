@@ -23,14 +23,14 @@ body {
 
 .sub_inner {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 10px;
 }
 
 .sub_food_inner {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 10px;
 }
