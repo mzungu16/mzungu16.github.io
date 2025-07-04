@@ -11,10 +11,12 @@ body {
 
 .category_container {
   max-width: 400px;
+  background: var("--tg-theme-bg-color");
 }
 
 .order_container {
   max-width: 400px;
+  background: var("--tg-theme-bg-color");
 }
 
 .sub_inner {
