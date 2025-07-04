@@ -13,13 +13,14 @@ body {
   min-width: 350px;
   max-width: 400px;
   background: var(--tg-theme-bg-color);
+  height: 100vh;
 }
 
 .order_container {
   min-width: 350px;
   max-width: 400px;
   background: var(--tg-theme-bg-color);
-  max-height: 500px;
+  height: 100vh;
 }
 
 .sub_inner {
