@@ -31,7 +31,7 @@ body {
 
 .sub_food_inner {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   grid-template-rows: auto;
   gap: 10px;
   height: 50vh;
@@ -63,16 +63,16 @@ body {
 }
 
 .card_image img {
-  width: 100%;
-  height: 80%;
+  width: 200px;
+  height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
 }
 
 .card_image_item img {
-  width: 100%;
-  height: 50%;
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
   object-fit: cover;
 }
