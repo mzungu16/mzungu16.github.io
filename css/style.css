@@ -10,11 +10,13 @@ body {
 }
 
 .category_container {
+  min-width: 350px;
   max-width: 400px;
   background: var(--tg-theme-bg-color);
 }
 
 .order_container {
+  min-width: 350px;
   max-width: 400px;
   background: var(--tg-theme-bg-color);
 }
@@ -22,19 +24,19 @@ body {
 .sub_inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  grid-template-rows: auto;
   gap: 10px;
 }
 
 .sub_food_inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(100px, auto);
-  column-gap: 20px;
+  grid-template-rows: auto;
+  gap: 10px;
 }
 
 .card_text {
-  margin:0;
+  margin: 0;
   padding: 5px;
 }
 
