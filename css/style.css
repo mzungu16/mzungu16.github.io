@@ -65,8 +65,8 @@ body {
 }
 
 .card_image img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
@@ -82,7 +82,7 @@ body {
 .item {
   margin: 5px;
   position: relative;
-  width: 150px;
+  width: auto;
   height: auto;
   box-sizing: border-box;
   text-align: center;
@@ -103,8 +103,7 @@ body {
 
 .btn {
   display: inline-block;
-  width: 150px;
-  height: 40px;
+  width: 100%;
   padding: 10px 10px;
   border: none;
   background: rgb(248, 168, 24);
@@ -117,8 +116,7 @@ body {
 
 .btn_item {
   display: inline-block;
-  width: 150px;
-  height: 40px;
+  width: 100%;
   padding: 10px 10px;
   border: none;
   background: rgb(248, 168, 24);
