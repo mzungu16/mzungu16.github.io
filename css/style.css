@@ -80,7 +80,7 @@ body {
 }
 
 .item {
-  padding: 4px 5px 21px;
+  padding: 4px;
   position: relative;
   width: auto;
   height: auto;
@@ -90,7 +90,7 @@ body {
 }
 
 .food_item {
-  padding: 4px 5px 21px;
+  padding: 4px;
   position: relative;
   width: 150px;
   height: auto;
