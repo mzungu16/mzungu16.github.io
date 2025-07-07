@@ -14,11 +14,13 @@ body {
 
 .category_container {
   max-width: 390px;
+  justify-content: center;
   background: var(--tg-theme-bg-color);
 }
 
 .order_container {
   max-width: 390px;
+  justify-content: center;
   background: var(--tg-theme-bg-color);
 }
 
@@ -92,6 +94,7 @@ body {
 .food_item {
   width: auto;
   height: fit-content;
+  text-align: center;
   border-radius: 10px;
   background: var(--tg-theme-section-bg-color);
 }
