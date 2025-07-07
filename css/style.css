@@ -18,6 +18,7 @@ body {
 }
 
 .order_container {
+  display: flex;
   max-width: 480px;
   background: var(--tg-theme-bg-color);
 }
@@ -34,7 +35,7 @@ body {
 .sub_food_inner {
   margin: 0;
   display: grid;
-  grid-template-columns: 160px 160px 160px;
+  grid-template-columns: 150px 150px 150px;
   grid-template-rows: auto;
   gap: 10px;
   height: auto;
@@ -74,8 +75,8 @@ body {
 }
 
 .card_image_item img {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   border-radius: 10px;
   object-fit: cover;
 }
