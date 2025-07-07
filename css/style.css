@@ -25,7 +25,7 @@ body {
 }
 
 .sub_inner {
-  margin: 0;
+  margin: 5px;
   display: grid;
   grid-template-columns: 195px 195px;
   grid-template-rows: auto;
@@ -34,7 +34,7 @@ body {
 }
 
 .sub_food_inner {
-  margin: 0;
+  margin: 5px;
   display: grid;
   grid-template-columns: 130px 130px 130px;
   grid-template-rows: auto;
@@ -44,7 +44,10 @@ body {
 
 .card_text {
   margin: 0;
-  padding: 5px;
+  padding: 2px;
+  background: var(--tg-theme-section-bg-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .title_txt {
@@ -95,8 +98,6 @@ body {
 .food_item {
   width: auto;
   height: auto;
-  border-radius: 10px;
-  background: var(--tg-theme-section-bg-color);
 }
 
 
