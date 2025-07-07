@@ -16,11 +16,11 @@ btnSoup.addEventListener("click", () => {
   console.log("Click");
   categoryContainer.style.display = 'none';
   tg.BackButton.show();
-  orderContainer.style.display = 'flex';
+  orderContainer.style.display = 'grid';
 });
 
 Telegram.WebApp.onEvent('backButtonClicked', () => {
-  categoryContainer.style.display = 'flex';
+  categoryContainer.style.display = 'grid';
   tg.BackButton.hide();
   orderContainer.style.display = 'none';
 });

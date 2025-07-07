@@ -8,6 +8,7 @@ body {
 
   --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --page-animation-duration: .3s;
+  --animation: .15s ease;
   --page-animation: var(--page-animation-duration) ease;
 }
 
@@ -22,21 +23,21 @@ body {
 }
 
 .sub_inner {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: space-around;
-  transition: max-height var(--page-animation), opacity var(--page-animation);
-  align-content: flex-end;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: auto;
+  gap: 20px;
+  height: auto;
 }
 
 .sub_food_inner {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: space-around;
-  transition: max-height var(--page-animation), opacity var(--page-animation);
-  align-content: flex-end;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 160px 160px 160px;
+  grid-template-rows: auto;
+  gap: 10px;
+  height: auto;
 }
 
 .card_text {
@@ -65,39 +66,67 @@ body {
 }
 
 .card_image img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   object-fit: cover;
 }
 
 .card_image_item img {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 10px;
   object-fit: cover;
 }
 
 .item {
-  padding: 4px;
-  position: relative;
   width: auto;
   height: auto;
-  box-sizing: border-box;
   text-align: center;
+  border-radius: 10px;
   background: var(--tg-theme-section-bg-color);
 }
 
 .food_item {
-  padding: 4px;
-  position: relative;
-  width: 150px;
+  width: auto;
   height: auto;
-  box-sizing: border-box;
-  text-align: center;
+  border-radius: 10px;
   background: var(--tg-theme-section-bg-color);
 }
+
+
+/*.card_item_counter {*/
+/*  display: inline-block;*/
+/*  font-family: var(--default-font);*/
+/*  font-weight: 700;*/
+/*  font-size: 14px;*/
+/*  line-height: 18px;*/
+/*  padding: 6px 16px;*/
+/*  height: 30px;*/
+/*  border-radius: 7px;*/
+/*  box-sizing: border-box;*/
+/*  background-color: var(--main-color);*/
+/*  text-transform: uppercase;*/
+/*  color: #fff;*/
+/*  outline: none;*/
+/*  border: none;*/
+/*}*/
+
+/*.card_item_counter {*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  top: 0;*/
+/*  min-width: 22px;*/
+/*  height: 22px;*/
+/*  padding: 2px 6px;*/
+/*  margin: 4px 6px;*/
+/*  border-radius: 11px;*/
+/*  transform: scale3d(0, 0, 1);*/
+/*  animation: var(--animation) both;*/
+/*  pointer-events: none;*/
+/*  z-index: 3;*/
+/*}*/
 
 .btn {
   display: inline-block;
