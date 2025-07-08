@@ -70,15 +70,15 @@ body {
   font-weight: 700;
 }
 
-/*Секция категории супов*/
-.soup_container {
+/*Секция блюд*/
+.food_container {
   max-width: var(--max-width-value);
   display: flex;
   justify-content: center;
   background: var(--tg-theme-bg-color);
 }
 
-.soup_grid {
+.food_grid {
   margin: 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -87,12 +87,12 @@ body {
   height: auto;
 }
 
-.soup_txt_container {
+.food_txt_container {
   margin: 0;
   padding: 5px;
 }
 
-.soup_title_txt {
+.food_title_txt {
   margin: 0;
   font-size: var(--title-txt-font);
   font-weight: bold;
@@ -100,28 +100,28 @@ body {
   text-align: start;
 }
 
-.soup_desc_txt {
+.food_desc_txt {
   margin: 0;
   font-size: var(--desc-txt-font);
   color: var(--tg-theme-hint-color);
   text-align: start;
 }
 
-.soup_price_txt {
+.food_price_txt {
   margin: 0;
   font-size: var(--desc-txt-font);
   color: var(--tg-theme-subtitle-text-color);
   text-align: start;
 }
 
-.soup_image img {
+.food_image img {
   width: 100%;
   height: var(--image-height-value);
   border-radius: var(--image-border-radius);
   object-fit: cover;
 }
 
-.soup_item {
+.food_item {
   width: fit-content;
   height: fit-content;
   text-align: center;
@@ -129,7 +129,7 @@ body {
   background: var(--tg-theme-section-bg-color);
 }
 
-.soup_btn {
+.food_btn {
   display: inline-block;
   width: 100%;
   padding: 10px 10px;
