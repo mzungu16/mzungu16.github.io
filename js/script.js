@@ -10,7 +10,8 @@ let btnDrink = document.getElementById("btnDrink");
 
 let categoryContainer = document.getElementById("category_id");
 let soupContainer = document.getElementById("order_id");
-orderContainer.style.display = 'none';
+
+soupContainer.style.display = 'none';
 
 btnSoup.addEventListener("click", () => {
   tg.expand();
