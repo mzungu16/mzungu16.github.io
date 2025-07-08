@@ -10,11 +10,23 @@ body {
   --page-animation-duration: .3s;
   --animation: .15s ease;
   --page-animation: var(--page-animation-duration) ease;
+
+  /*Общие переменные*/
+  --max-width-value: 390px;
+  --grid-gap-value: 10px;
+  --btn-border-radius-angles: 10px;
+  --title-txt-font: 16px;
+  --desc-txt-font: 14px;
+  --image-height-value: 200px;
+  --item-radius-value: 10px;
+  /*Переменные главного экрана*/
+  /*Переменные категории супы*/
+  --image-border-radius: 10px;
 }
 
 /*Секция главного экрана категорий*/
 .category_container {
-  max-width: 390px;
+  max-width: var(--max-width-value);
   display: flex;
   justify-content: center;
   background: var(--tg-theme-bg-color);
@@ -22,17 +34,17 @@ body {
 
 .category_grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  gap: 10px;
+  gap: var(--grid-gap-value);
   height: auto;
 }
 
 .category_image img {
   width: 100%;
-  height: 200px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: var(--image-height-value);
+  border-top-left-radius: var(--btn-border-radius-angles);
+  border-top-right-radius: var(--btn-border-radius-angles);
   object-fit: cover;
 }
 
@@ -40,7 +52,7 @@ body {
   width: fit-content;
   height: fit-content;
   text-align: center;
-  border-radius: 10px;
+  border-radius: var(--item-radius-value);
   background: var(--tg-theme-section-bg-color);
 }
 
@@ -50,8 +62,8 @@ body {
   padding: 10px 10px;
   border: none;
   background: rgb(248, 168, 24);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: var(--btn-border-radius-angles);
+  border-bottom-right-radius: var(--btn-border-radius-angles);
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
@@ -59,7 +71,7 @@ body {
 
 /*Секция категории супов*/
 .soup_container {
-  max-width: 390px;
+  max-width: var(--max-width-value);
   display: flex;
   justify-content: center;
   background: var(--tg-theme-bg-color);
@@ -70,7 +82,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  gap: 10px;
+  gap: var(--grid-gap-value);
   height: auto;
 }
 
@@ -81,7 +93,7 @@ body {
 
 .soup_title_txt {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--title-txt-font);
   font-weight: bold;
   color: var(--tg-theme-text-color);
   text-align: start;
@@ -89,22 +101,22 @@ body {
 
 .soup_desc_txt {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--desc-txt-font);
   color: var(--tg-theme-hint-color);
   text-align: start;
 }
 
 .soup_price_txt {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--desc-txt-font);
   color: var(--tg-theme-subtitle-text-color);
   text-align: start;
 }
 
 .soup_image img {
   width: 100%;
-  height: 200px;
-  border-radius: 10px;
+  height: var(--image-height-value);
+  border-radius: var(--image-border-radius);
   object-fit: cover;
 }
 
@@ -112,7 +124,7 @@ body {
   width: fit-content;
   height: fit-content;
   text-align: center;
-  border-radius: 10px;
+  border-radius: var(--item-radius-value);
   background: var(--tg-theme-section-bg-color);
 }
 
