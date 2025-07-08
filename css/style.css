@@ -14,12 +14,14 @@ body {
 
 .category_container {
   max-width: 390px;
+  display: flex;
   justify-content: center;
   background: var(--tg-theme-bg-color);
 }
 
 .order_container {
   max-width: 390px;
+  display: flex;
   justify-content: center;
   background: var(--tg-theme-bg-color);
 }
