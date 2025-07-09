@@ -2,15 +2,42 @@ let tg = window.Telegram.WebApp;
 let categoryContainer = document.getElementById("category_id");
 let soupContainer = document.getElementById("food_id");
 let dishesContainer = document.getElementById("dishes_id");
-let buttonList = document.querySelectorAll(".category_btn");
+let categoryBtnList = document.querySelectorAll(".category_btn");
+let foodBtnList = document.querySelectorAll(".food_btn");
+let decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
+let incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
+let foodContainerList = document.querySelectorAll(".food_counter");
+
+let foodCounter = 1;
 
 defaultScreenSettings();
 tg.lockOrientation();
 
-buttonList.forEach(function (i) {
-  i.addEventListener("click", (e) => {
-    console.log(`id: ${e.target.textContent}`);
-    openDivSection(e.target.textContent.toLowerCase());
+categoryBtnList.forEach((categoryBtnElement) => {
+  categoryBtnElement.addEventListener("click", (event) => {
+    console.log(`id: ${event.target.textContent}`);
+    openDivSection(event.target.textContent.toLowerCase());
+  })
+});
+
+foodBtnList.forEach((foodBtnElement) => {
+  foodBtnElement.addEventListener("click", (event) => {
+    let index = [...foodBtnList].indexOf(foodBtnElement)
+    showFoodCounterSection(foodBtnElement, decrFoodBtnList[index], foodContainerList[index], incrFoodBtnList[index]);
+  })
+});
+
+decrFoodBtnList.forEach((decrElement) => {
+  decrElement.addEventListener("click", (event) => {
+    let index = [...decrFoodBtnList].indexOf(decrElement);
+    handleBtnDecrSubmit(foodBtnList[index], decrElement, foodContainerList[index], incrFoodBtnList[index]);
+  })
+});
+
+incrFoodBtnList.forEach((incrElement) => {
+  incrElement.addEventListener("click", (event) => {
+    let index = [...incrFoodBtnList].indexOf(incrElement);
+    handleBtnIncrSubmit(foodBtnList[index], decrFoodBtnList[index], foodContainerList[index], incrElement)
   })
 });
 
@@ -49,6 +76,28 @@ function openDivSection(category_txt) {
     case "напитки":
       break;
   }
+}
+
+function showFoodCounterSection(element, decrBtnEl, foodCounterEl, incrBtnEl) {
+  element.style.display = 'none';
+  decrBtnEl.style.display = 'inline-block';
+  foodCounterEl.style.display = 'inline-block';
+  incrBtnEl.style.display = 'inline-block';
+}
+
+function handleBtnDecrSubmit(foodBuyBtnEl, decrBtnEl, foodCounterEl, incrBtnEl) {
+  if (foodCounterEl.textContent === "1") {
+    foodBuyBtnEl.style.display = 'inline-block';
+    decrBtnEl.style.display = 'none';
+    foodCounterEl.style.display = 'none';
+    incrBtnEl.style.display = 'none';
+  } else {
+    foodCounterEl.textContent = foodCounter -= 1;
+  }
+}
+
+function handleBtnIncrSubmit(foodBuyBtnEl, decrBtnEl, foodCounterEl, incrBtnEl) {
+  foodCounterEl.textContent = foodCounter += 1;
 }
 
 Telegram.WebApp.onEvent('backButtonClicked', () => {

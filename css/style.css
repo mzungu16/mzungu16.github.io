@@ -10,7 +10,8 @@ body {
   --page-animation-duration: .3s;
   --animation: .15s ease;
   --page-animation: var(--page-animation-duration) ease;
-
+  --ripple-duration: .45s;
+  --ripple-end-duration: .3s;
   /*Общие переменные*/
   --max-width-value: 390px;
   --grid-gap-value: 10px;
@@ -127,6 +128,52 @@ body {
   text-align: center;
   border-radius: var(--item-radius-value);
   background: var(--tg-theme-section-bg-color);
+}
+
+.food_item_buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  position: relative;
+}
+
+.food_decr_btn {
+  border: none;
+  width: 40%;
+  height: 20%;
+  background-color: #e64d44;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 10px;
+  display: none;
+}
+
+.food_counter {
+  margin: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 40%;
+  padding: 10px 10px;
+  text-align: center;
+  display: none;
+}
+
+.food_incr_btn {
+  display: none;
+  border-radius: 10px;
+  height: 20%;
+  background: rgb(248, 168, 24);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 40%;
+  padding: 10px 10px;
 }
 
 .food_btn {
