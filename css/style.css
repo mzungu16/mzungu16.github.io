@@ -140,11 +140,10 @@ body {
 .food_decr_btn {
   border: none;
   width: 40%;
-  height: 20%;
   background-color: #e64d44;
   border-radius: 10px;
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
   padding: 10px 10px;
@@ -153,23 +152,23 @@ body {
 
 .food_counter {
   margin: 0;
-  font-size: 16px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
   width: 40%;
   padding: 10px 10px;
   text-align: center;
   display: none;
+  color: var(--tg-theme-text-color);
 }
 
 .food_incr_btn {
   display: none;
   border-radius: 10px;
-  height: 20%;
   background: rgb(248, 168, 24);
   border: none;
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
   width: 40%;

@@ -7,12 +7,12 @@ let foodBtnList = document.querySelectorAll(".food_btn");
 let decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
 let incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
 let foodContainerList = document.querySelectorAll(".food_counter");
-
 let foodCounter = 1;
 
 defaultScreenSettings();
 tg.lockOrientation();
 
+/*Навешивание кликов на кнопки*/
 categoryBtnList.forEach((categoryBtnElement) => {
   categoryBtnElement.addEventListener("click", (event) => {
     console.log(`id: ${event.target.textContent}`);
@@ -41,6 +41,7 @@ incrFoodBtnList.forEach((incrElement) => {
   })
 });
 
+/*Обработчики экранного состояния*/
 function defaultScreenSettings() {
   categoryContainer.style.display = 'grid';
   soupContainer.style.display = 'none';
@@ -85,6 +86,8 @@ function showFoodCounterSection(element, decrBtnEl, foodCounterEl, incrBtnEl) {
   incrBtnEl.style.display = 'inline-block';
 }
 
+
+/*Обработчики нажатия инкремента и декремента товаров*/
 function handleBtnDecrSubmit(foodBuyBtnEl, decrBtnEl, foodCounterEl, incrBtnEl) {
   if (foodCounterEl.textContent === "1") {
     foodBuyBtnEl.style.display = 'inline-block';
@@ -100,6 +103,7 @@ function handleBtnIncrSubmit(foodBuyBtnEl, decrBtnEl, foodCounterEl, incrBtnEl) 
   foodCounterEl.textContent = foodCounter += 1;
 }
 
+/*Обработка нажатия BackButton Telegram*/
 Telegram.WebApp.onEvent('backButtonClicked', () => {
   tg.BackButton.hide();
   defaultScreenSettings();
