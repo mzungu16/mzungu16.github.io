@@ -13,6 +13,7 @@ let incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
 let foodContainerList = document.querySelectorAll(".food_counter");
 let foodCounter = 1;
 
+console.log(tg.version);
 defaultScreenSettings();
 tg.lockOrientation();
 
@@ -47,7 +48,10 @@ incrFoodBtnList.forEach((incrElement) => {
 
 /*Обработчики экранного состояния*/
 function defaultScreenSettings() {
-  tg.MainButton.setParams(text = 'Просмотреть заказ', color = 'button_color', text_color = 'button_text_color');
+  tg.MainButton.setParams(text = "Просмотреть корзину", color = tg.themeParams.button_color, tg.themeParams.button_text_color)
+  /* tg.MainButton.text = "Просмотреть корзину";
+   tg.MainButton.color = tg.themeParams.button_color;
+   tg.MainButton.textColor = tg.themeParams.button_text_color;*/
   categoryContainer.style.display = 'grid';
   soupContainer.style.display = 'none';
   dishesContainer.style.display = 'none';
