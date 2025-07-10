@@ -140,5 +140,6 @@ function handleBtnIncrSubmit(foodBuyBtnEl, decrBtnEl, foodCounterEl, incrBtnEl) 
 /*Обработка нажатия BackButton Telegram*/
 Telegram.WebApp.onEvent('backButtonClicked', () => {
   tg.BackButton.hide();
+  tg.MainButton.hide();
   defaultScreenSettings();
 });
