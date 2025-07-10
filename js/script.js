@@ -48,7 +48,7 @@ incrFoodBtnList.forEach((incrElement) => {
 
 /*Обработчики экранного состояния*/
 function defaultScreenSettings() {
-  tg.MainButton.setParams(text = "Просмотреть корзину", color = tg.themeParams.button_color, tg.themeParams.button_text_color)
+  tg.MainButton.setParams(text = "Просмотреть корзину", color = tg.themeParams.button_color, text_color = tg.themeParams.button_text_color);
   /* tg.MainButton.text = "Просмотреть корзину";
    tg.MainButton.color = tg.themeParams.button_color;
    tg.MainButton.textColor = tg.themeParams.button_text_color;*/
