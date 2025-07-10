@@ -14,7 +14,11 @@ let foodContainerList = document.querySelectorAll(".food_counter");
 let foodCounter = 1;
 
 console.log(tg.version);
-defaultScreenSettings();
+
+const defaultClass = new ScreenMode();
+defaultClass.setTgValue = tg;
+ScreenMode.defaultScreenMode(categoryContainer, soupContainer, dishesContainer, lunchContainer, drinksContainer);
+
 tg.lockOrientation();
 
 /*Навешивание кликов на кнопки*/
@@ -45,18 +49,6 @@ incrFoodBtnList.forEach((incrElement) => {
     handleBtnIncrSubmit(foodBtnList[index], decrFoodBtnList[index], foodContainerList[index], incrElement)
   })
 });
-
-/*Обработчики экранного состояния*/
-function defaultScreenSettings() {
-  tg.MainButton.text = "Просмотреть корзину";
-  tg.MainButton.color = tg.themeParams.button_color;
-  tg.MainButton.textColor = tg.themeParams.button_text_color;
-  categoryContainer.style.display = 'grid';
-  soupContainer.style.display = 'none';
-  dishesContainer.style.display = 'none';
-  lunchContainer.style.display = 'none';
-  drinksContainer.style.display = 'none';
-}
 
 function soupsScreenSettings() {
   tg.expand();
