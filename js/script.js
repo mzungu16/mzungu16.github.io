@@ -1,11 +1,5 @@
 let tg = window.Telegram.WebApp;
 
-let categoryContainer = document.getElementById("category_id");
-let soupContainer = document.getElementById("food_id");
-let dishesContainer = document.getElementById("dishes_id");
-let lunchContainer = document.getElementById("lunch_id");
-let drinksContainer = document.getElementById("drinks_id");
-
 let categoryBtnList = document.querySelectorAll(".category_btn");
 let foodBtnList = document.querySelectorAll(".food_btn");
 let decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
@@ -15,16 +9,15 @@ let foodCounter = 1;
 
 console.log(tg.version);
 
-const defaultClass = new ScreenMode();
-defaultClass.setTgValue = tg;
-ScreenMode.defaultScreenMode(categoryContainer, soupContainer, dishesContainer, lunchContainer, drinksContainer);
+const screenMode = new ScreenModeBuilder()
+  .setTg(tg)
+  .build();
 
-tg.lockOrientation();
+screenMode.defaultScreenMode();
 
 /*Навешивание кликов на кнопки*/
 categoryBtnList.forEach((categoryBtnElement) => {
   categoryBtnElement.addEventListener("click", (event) => {
-    console.log(`id: ${event.target.textContent}`);
     openDivSection(event.target.textContent.toLowerCase());
   })
 });
@@ -50,59 +43,19 @@ incrFoodBtnList.forEach((incrElement) => {
   })
 });
 
-function soupsScreenSettings() {
-  tg.expand();
-  tg.BackButton.show();
-  categoryContainer.style.display = 'none';
-  soupContainer.style.display = 'grid';
-  dishesContainer.style.display = 'none';
-  lunchContainer.style.display = 'none';
-  drinksContainer.style.display = 'none';
-}
-
-function dishesScreenSettings() {
-  tg.expand();
-  tg.BackButton.show();
-  categoryContainer.style.display = 'none';
-  soupContainer.style.display = 'none';
-  dishesContainer.style.display = 'grid';
-  lunchContainer.style.display = 'none';
-  drinksContainer.style.display = 'none';
-}
-
-function lunchScreenSettings() {
-  tg.expand();
-  tg.BackButton.show();
-  categoryContainer.style.display = 'none';
-  soupContainer.style.display = 'none';
-  dishesContainer.style.display = 'none';
-  lunchContainer.style.display = 'grid';
-  drinksContainer.style.display = 'none';
-}
-
-function drinksScreenSettings() {
-  tg.expand();
-  tg.BackButton.show();
-  categoryContainer.style.display = 'none';
-  soupContainer.style.display = 'none';
-  dishesContainer.style.display = 'none';
-  lunchContainer.style.display = 'none';
-  drinksContainer.style.display = 'grid';
-}
-
 function openDivSection(category_txt) {
   switch (category_txt) {
     case "супы":
-      soupsScreenSettings();
+      screenMode.soupsScreenMode();
       break;
     case "вторые блюда":
-      dishesScreenSettings();
+      screenMode.dishesScreenMode();
       break;
     case "закуски":
-      lunchScreenSettings();
+      screenMode.lunchScreenMode();
       break;
     case "напитки":
-      drinksScreenSettings();
+      screenMode.drinksScreenMode();
       break;
   }
 }
@@ -134,7 +87,5 @@ function handleBtnIncrSubmit(foodBuyBtnEl, decrBtnEl, foodCounterEl, incrBtnEl) 
 
 /*Обработка нажатия BackButton Telegram*/
 Telegram.WebApp.onEvent('backButtonClicked', () => {
-  tg.BackButton.hide();
-  tg.MainButton.hide();
-  defaultScreenSettings();
+  ScreenMode.defaultScreenMode();
 });
