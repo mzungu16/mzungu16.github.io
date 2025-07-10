@@ -27,6 +27,7 @@ class ScreenMode {
   soupsScreenMode() {
     this.tg.expand();
     this.tg.BackButton.show();
+
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'grid';
     this.dishesContainer.style.display = 'none';
@@ -37,6 +38,7 @@ class ScreenMode {
   dishesScreenMode() {
     this.tg.expand();
     this.tg.BackButton.show();
+
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';
     this.dishesContainer.style.display = 'grid';
@@ -47,6 +49,7 @@ class ScreenMode {
   lunchScreenMode() {
     this.tg.expand();
     this.tg.BackButton.show();
+
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';
     this.dishesContainer.style.display = 'none';
@@ -57,6 +60,7 @@ class ScreenMode {
   drinksScreenMode() {
     this.tg.expand();
     this.tg.BackButton.show();
+
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';
     this.dishesContainer.style.display = 'none';
