@@ -1,7 +1,11 @@
 let tg = window.Telegram.WebApp;
+
 let categoryContainer = document.getElementById("category_id");
 let soupContainer = document.getElementById("food_id");
 let dishesContainer = document.getElementById("dishes_id");
+let lunchContainer = document.getElementById("lunch_id");
+let drinksContainer = document.getElementById("drinks_id");
+
 let categoryBtnList = document.querySelectorAll(".category_btn");
 let foodBtnList = document.querySelectorAll(".food_btn");
 let decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
@@ -43,9 +47,12 @@ incrFoodBtnList.forEach((incrElement) => {
 
 /*Обработчики экранного состояния*/
 function defaultScreenSettings() {
+  tg.MainButton.setParams(text = 'Просмотреть заказ', color = 'button_color', text_color = 'button_text_color');
   categoryContainer.style.display = 'grid';
   soupContainer.style.display = 'none';
   dishesContainer.style.display = 'none';
+  lunchContainer.style.display = 'none';
+  drinksContainer.style.display = 'none';
 }
 
 function soupsScreenSettings() {
@@ -54,6 +61,8 @@ function soupsScreenSettings() {
   categoryContainer.style.display = 'none';
   soupContainer.style.display = 'grid';
   dishesContainer.style.display = 'none';
+  lunchContainer.style.display = 'none';
+  drinksContainer.style.display = 'none';
 }
 
 function dishesScreenSettings() {
@@ -62,6 +71,28 @@ function dishesScreenSettings() {
   categoryContainer.style.display = 'none';
   soupContainer.style.display = 'none';
   dishesContainer.style.display = 'grid';
+  lunchContainer.style.display = 'none';
+  drinksContainer.style.display = 'none';
+}
+
+function lunchScreenSettings() {
+  tg.expand();
+  tg.BackButton.show();
+  categoryContainer.style.display = 'none';
+  soupContainer.style.display = 'none';
+  dishesContainer.style.display = 'none';
+  lunchContainer.style.display = 'grid';
+  drinksContainer.style.display = 'none';
+}
+
+function drinksScreenSettings() {
+  tg.expand();
+  tg.BackButton.show();
+  categoryContainer.style.display = 'none';
+  soupContainer.style.display = 'none';
+  dishesContainer.style.display = 'none';
+  lunchContainer.style.display = 'none';
+  drinksContainer.style.display = 'grid';
 }
 
 function openDivSection(category_txt) {
@@ -73,8 +104,10 @@ function openDivSection(category_txt) {
       dishesScreenSettings();
       break;
     case "закуски":
+      lunchScreenSettings();
       break;
     case "напитки":
+      drinksScreenSettings();
       break;
   }
 }
@@ -84,6 +117,7 @@ function showFoodCounterSection(element, decrBtnEl, foodCounterEl, incrBtnEl) {
   decrBtnEl.style.display = 'inline-block';
   foodCounterEl.style.display = 'inline-block';
   incrBtnEl.style.display = 'inline-block';
+  tg.MainButton.show();
 }
 
 
