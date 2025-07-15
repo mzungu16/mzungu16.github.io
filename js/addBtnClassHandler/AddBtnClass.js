@@ -43,7 +43,7 @@ class AddBtnClass {
     });
   }
 
-  handleAddBtnClick(dishTitle, dishPrice, dishCount) {
+  handleAddBtnClick() {
     this.tg.MainButton.show();
 
     this.foodBtnList[this.index].style.display = 'none';

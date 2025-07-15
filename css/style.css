@@ -138,6 +138,7 @@ body {
 }
 
 .food_decr_btn {
+  touch-action: manipulation;
   border: none;
   width: 40%;
   background-color: #e64d44;
@@ -163,6 +164,7 @@ body {
 }
 
 .food_incr_btn {
+  touch-action: manipulation;
   display: none;
   border-radius: 10px;
   background: rgb(54, 248, 24);
