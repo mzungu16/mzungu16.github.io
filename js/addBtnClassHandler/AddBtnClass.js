@@ -20,8 +20,7 @@ class AddBtnClass {
     this.foodBtnList.forEach((foodBtnElement) => {
       foodBtnElement.addEventListener("click", (event) => {
         this.index = [...this.foodBtnList].indexOf(foodBtnElement);
-        this.handleAddBtnClick(this.index, foodBtnElement, this.decrFoodBtnList[this.index], this.foodContainerList[this.index],
-          this.incrFoodBtnList[this.index], this.foodTitleList[this.index], this.foodPriceList[this.index], this.foodCountList[this.index]);
+        this.handleAddBtnClick();
       })
     });
   }
@@ -44,20 +43,20 @@ class AddBtnClass {
     });
   }
 
-  handleAddBtnClick(index, addBtnElement, decrBtnElement, counterTxtElement, incrBtnElement, dishTitle, dishPrice, dishCount) {
+  handleAddBtnClick(dishTitle, dishPrice, dishCount) {
     this.tg.MainButton.show();
 
-    addBtnElement.style.display = 'none';
-    decrBtnElement.style.display = 'inline-block';
-    counterTxtElement.style.display = 'inline-block';
-    incrBtnElement.style.display = 'inline-block';
+    this.foodBtnList[this.index].style.display = 'none';
+    this.decrFoodBtnList[this.index].style.display = 'inline-block';
+    this.foodContainerList[this.index].style.display = 'inline-block';
+    this.incrFoodBtnList[this.index].style.display = 'inline-block';
 
     this.dishBuilder = new DishClassBuilder()
-      .setId(index)
-      .setElementPos(index)
-      .setTitle(dishTitle.textContent)
-      .setPrice(dishPrice.textContent)
-      .setCount(dishCount.textContent)
+      .setId(this.index)
+      .setElementPos(this.index)
+      .setTitle(this.foodTitleList[this.index].textContent)
+      .setPrice(this.foodPriceList[this.index].textContent)
+      .setCount(this.foodCountList[this.index].textContent)
       .build();
 
     this.dishesList.push(this.dishBuilder);
@@ -75,15 +74,9 @@ class AddBtnClass {
     this.dishesList.forEach((item, indexElement) => {
       if (this.index === item.dishPosition) {
         if (this.foodContainerList[item.dishPosition].textContent <= "1") {
-          console.log(true);
-          this.foodBtnList[item.dishPosition].style.display = 'inline-block';
-          this.decrFoodBtnList[item.dishPosition].style.display = 'none';
-          this.foodContainerList[item.dishPosition].style.display = 'none';
-          this.incrFoodBtnList[item.dishPosition].style.display = 'none';
-          console.log(item.dishTitle);
+          this.showAddBtn(item);
           this.dishesList.splice(indexElement, 1);
         } else {
-          console.log(true);
           let counter = parseInt(item.dishCount);
           item.dishCount = counter - 1;
           this.foodContainerList[item.dishPosition].textContent = item.dishCount;
@@ -95,11 +88,17 @@ class AddBtnClass {
   handleBtnIncrSubmit() {
     this.dishesList.forEach((item) => {
       if (this.index === item.dishPosition) {
-        console.log(true);
         let counter = parseInt(item.dishCount);
         item.dishCount = counter + 1;
         this.foodContainerList[item.dishPosition].textContent = item.dishCount;
       }
     });
+  }
+
+  showAddBtn(item) {
+    this.foodBtnList[item.dishPosition].style.display = 'inline-block';
+    this.decrFoodBtnList[item.dishPosition].style.display = 'none';
+    this.foodContainerList[item.dishPosition].style.display = 'none';
+    this.incrFoodBtnList[item.dishPosition].style.display = 'none';
   }
 }
