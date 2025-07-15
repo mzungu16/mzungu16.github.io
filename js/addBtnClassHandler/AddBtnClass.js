@@ -3,7 +3,14 @@ class AddBtnClass {
   decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
   foodContainerList = document.querySelectorAll(".food_counter");
   incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
-  foodCounter = 1;
+
+  foodTitleList = document.querySelectorAll(".food_title_txt");
+  foodPriceList = document.querySelectorAll(".food_price_txt");
+  foodCountList = document.querySelectorAll(".food_counter");
+  order = new OrderClassBuilder().build();
+  dishBuilder = new DishClassBuilder().build();
+  index;
+  dishesList = [];
 
   constructor(telegram) {
     this.tg = telegram;
@@ -12,8 +19,9 @@ class AddBtnClass {
   onAddBtnClickEvent() {
     this.foodBtnList.forEach((foodBtnElement) => {
       foodBtnElement.addEventListener("click", (event) => {
-        let index = [...this.foodBtnList].indexOf(foodBtnElement)
-        this.handleAddBtnClick(foodBtnElement, this.decrFoodBtnList[index], this.foodContainerList[index], this.incrFoodBtnList[index]);
+        this.index = [...this.foodBtnList].indexOf(foodBtnElement);
+        this.handleAddBtnClick(this.index, foodBtnElement, this.decrFoodBtnList[this.index], this.foodContainerList[this.index],
+          this.incrFoodBtnList[this.index], this.foodTitleList[this.index], this.foodPriceList[this.index], this.foodCountList[this.index]);
       })
     });
   }
@@ -21,8 +29,8 @@ class AddBtnClass {
   onDecrBtnClickEvent() {
     this.decrFoodBtnList.forEach((decrElement) => {
       decrElement.addEventListener("click", (event) => {
-        let index = [...this.decrFoodBtnList].indexOf(decrElement);
-        this.handleBtnDecrSubmit(this.foodBtnList[index], decrElement, this.foodContainerList[index], this.incrFoodBtnList[index]);
+        this.index = [...this.decrFoodBtnList].indexOf(decrElement);
+        this.handleBtnDecrSubmit();
       })
     });
   }
@@ -30,35 +38,68 @@ class AddBtnClass {
   onIncrBtnClickEvent() {
     this.incrFoodBtnList.forEach((incrElement) => {
       incrElement.addEventListener("click", (event) => {
-        let index = [...this.incrFoodBtnList].indexOf(incrElement);
-        this.handleBtnIncrSubmit(this.foodBtnList[index], this.decrFoodBtnList[index], this.foodContainerList[index], incrElement)
+        this.index = [...this.incrFoodBtnList].indexOf(incrElement);
+        this.handleBtnIncrSubmit()
       })
     });
   }
 
-  handleAddBtnClick(addBtnElement, decrBtnElement, counterTxtElement, incrBtnElement) {
+  handleAddBtnClick(index, addBtnElement, decrBtnElement, counterTxtElement, incrBtnElement, dishTitle, dishPrice, dishCount) {
     this.tg.MainButton.show();
-
-    this.foodCounter = 1;
 
     addBtnElement.style.display = 'none';
     decrBtnElement.style.display = 'inline-block';
     counterTxtElement.style.display = 'inline-block';
     incrBtnElement.style.display = 'inline-block';
+
+    this.dishBuilder = new DishClassBuilder()
+      .setId(index)
+      .setElementPos(index)
+      .setTitle(dishTitle.textContent)
+      .setPrice(dishPrice.textContent)
+      .setCount(dishCount.textContent)
+      .build();
+
+    this.dishesList.push(this.dishBuilder);
+
+    this.order = new OrderClassBuilder()
+      .setOrderDishes(this.dishesList)
+      .build();
+
+    this.order.dishesList.forEach((item) => {
+      console.log(`List dishes in order - ${item.dishTitle} || ${item.dishCount}`);
+    });
   }
 
-  handleBtnDecrSubmit(addBtnElement, decrBtnElement, counterTxtElement, incrBtnElement) {
-    if (counterTxtElement.textContent === "1") {
-      addBtnElement.style.display = 'inline-block';
-      decrBtnElement.style.display = 'none';
-      counterTxtElement.style.display = 'none';
-      incrBtnElement.style.display = 'none';
-    } else {
-      counterTxtElement.textContent = this.foodCounter -= 1;
-    }
+  handleBtnDecrSubmit() {
+    this.dishesList.forEach((item, indexElement) => {
+      if (this.index === item.dishPosition) {
+        if (this.foodContainerList[item.dishPosition].textContent <= "1") {
+          console.log(true);
+          this.foodBtnList[item.dishPosition].style.display = 'inline-block';
+          this.decrFoodBtnList[item.dishPosition].style.display = 'none';
+          this.foodContainerList[item.dishPosition].style.display = 'none';
+          this.incrFoodBtnList[item.dishPosition].style.display = 'none';
+          console.log(item.dishTitle);
+          this.dishesList.splice(indexElement, 1);
+        } else {
+          console.log(true);
+          let counter = parseInt(item.dishCount);
+          item.dishCount = counter - 1;
+          this.foodContainerList[item.dishPosition].textContent = item.dishCount;
+        }
+      }
+    });
   }
 
-  handleBtnIncrSubmit(addBtnElement, decrBtnElement, counterTxtElement, incrBtnElement) {
-    counterTxtElement.textContent = this.foodCounter += 1;
+  handleBtnIncrSubmit() {
+    this.dishesList.forEach((item) => {
+      if (this.index === item.dishPosition) {
+        console.log(true);
+        let counter = parseInt(item.dishCount);
+        item.dishCount = counter + 1;
+        this.foodContainerList[item.dishPosition].textContent = item.dishCount;
+      }
+    });
   }
 }
