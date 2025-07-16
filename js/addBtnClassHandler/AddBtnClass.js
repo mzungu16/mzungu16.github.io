@@ -44,6 +44,9 @@ class AddBtnClass {
   }
 
   handleAddBtnClick() {
+    this.tg.MainButton.text = "Просмотреть корзину";
+    this.tg.MainButton.color = this.tg.themeParams.button_color;
+    this.tg.MainButton.textColor = this.tg.themeParams.button_text_color;
     this.tg.MainButton.show();
 
     this.foodBtnList[this.index].style.display = 'none';
@@ -64,10 +67,6 @@ class AddBtnClass {
     this.order = new OrderClassBuilder()
       .setOrderDishes(this.dishesList)
       .build();
-
-    this.order.dishesList.forEach((item) => {
-      console.log(`List dishes in order - ${item.dishTitle} || ${item.dishCount}`);
-    });
   }
 
   handleBtnDecrSubmit() {
@@ -102,3 +101,7 @@ class AddBtnClass {
     this.incrFoodBtnList[item.dishPosition].style.display = 'none';
   }
 }
+
+Telegram.WebApp.onEvent('mainButtonClicked', () => {
+  screenMode.defaultScreenMode();
+});

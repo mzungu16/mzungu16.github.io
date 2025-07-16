@@ -11,9 +11,6 @@ class ScreenMode {
 
   defaultScreenMode() {
     this.tg.lockOrientation();
-    this.tg.MainButton.text = "Просмотреть корзину";
-    this.tg.MainButton.color = this.tg.themeParams.button_color;
-    this.tg.MainButton.textColor = this.tg.themeParams.button_text_color;
     this.tg.BackButton.hide();
     this.tg.MainButton.hide();
 

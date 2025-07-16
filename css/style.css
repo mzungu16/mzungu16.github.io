@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   font-family: var(--default-font);
   font-size: 13px;
+  touch-action: manipulation;
 
   --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --page-animation-duration: .3s;
@@ -188,4 +189,70 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+/*Секция заказа*/
+.order_container {
+  max-width: var(--max-width-value);
+  display: flex;
+  justify-content: center;
+  background: var(--tg-theme-bg-color);
+}
+
+.order_grid {
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  height: auto;
+}
+
+.order_title_txt {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--tg-theme-text-color);
+  text-align: start;
+}
+
+.order_food_item {
+  display: flex;
+}
+
+.order_image img {
+  padding-top: 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--image-border-radius);
+  object-fit: cover;
+}
+
+.order_food_title {
+  margin: 0;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--tg-theme-text-color);
+}
+
+.order_food_desc {
+  margin: 0;
+  padding-left: 10px;
+  font-size: var(--desc-txt-font);
+  color: var(--tg-theme-hint-color);
+}
+
+.order_price_container {
+  margin: 0;
+  width: 100%;
+  text-align: end;
+  padding: 5px;
+}
+
+.order_price_txt {
+  margin: 0;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--tg-theme-text-color);
 }
