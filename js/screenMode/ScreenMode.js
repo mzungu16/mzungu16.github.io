@@ -4,6 +4,7 @@ class ScreenMode {
   dishesContainer = document.getElementById("dishes_id");
   lunchContainer = document.getElementById("lunch_id");
   drinksContainer = document.getElementById("drinks_id");
+  orderContainer = document.getElementById("order_id");
 
   constructor(telegram) {
     this.tg = telegram;
@@ -19,6 +20,7 @@ class ScreenMode {
     this.dishesContainer.style.display = 'none';
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'none';
+    this.orderContainer.style.display = 'none';
   }
 
   soupsScreenMode() {
@@ -30,6 +32,7 @@ class ScreenMode {
     this.dishesContainer.style.display = 'none';
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'none';
+    this.orderContainer.style.display = 'none';
   }
 
   dishesScreenMode() {
@@ -41,6 +44,7 @@ class ScreenMode {
     this.dishesContainer.style.display = 'grid';
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'none';
+    this.orderContainer.style.display = 'none';
   }
 
   lunchScreenMode() {
@@ -52,6 +56,7 @@ class ScreenMode {
     this.dishesContainer.style.display = 'none';
     this.lunchContainer.style.display = 'grid';
     this.drinksContainer.style.display = 'none';
+    this.orderContainer.style.display = 'none';
   }
 
   drinksScreenMode() {
@@ -63,5 +68,18 @@ class ScreenMode {
     this.dishesContainer.style.display = 'none';
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'grid';
+    this.orderContainer.style.display = 'none';
+  }
+
+  orderScreenMode() {
+    this.tg.expand();
+    this.tg.BackButton.show();
+
+    this.categoryContainer.style.display = 'none';
+    this.soupContainer.style.display = 'none';
+    this.dishesContainer.style.display = 'none';
+    this.lunchContainer.style.display = 'none';
+    this.drinksContainer.style.display = 'none';
+    this.orderContainer.style.display = 'grid';
   }
 }

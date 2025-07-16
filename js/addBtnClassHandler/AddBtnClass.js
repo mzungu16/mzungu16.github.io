@@ -3,7 +3,7 @@ class AddBtnClass {
   decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
   foodContainerList = document.querySelectorAll(".food_counter");
   incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
-
+  orderTitleId = document.getElementById("order_title_id");
   foodTitleList = document.querySelectorAll(".food_title_txt");
   foodPriceList = document.querySelectorAll(".food_price_txt");
   foodCountList = document.querySelectorAll(".food_counter");
@@ -100,8 +100,41 @@ class AddBtnClass {
     this.foodContainerList[item.dishPosition].style.display = 'none';
     this.incrFoodBtnList[item.dishPosition].style.display = 'none';
   }
+
+  createElements(orderItem) {
+    let orderFoodItem = document.createElement("div");
+    orderFoodItem.classList.add("order_food_item");
+    this.orderTitleId.append(orderFoodItem);
+    console.log(orderFoodItem);
+    let orderImageContainer = document.createElement("div");
+    orderImageContainer.classList.add("order_image");
+    orderFoodItem.append(orderImageContainer);
+    let orderImageValue = document.createElement("img");
+    orderImageValue.src = "https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg";
+    orderImageContainer.append(orderImageValue);
+    let orderFoodTxtContainer = document.createElement("div");
+    orderFoodItem.append(orderFoodTxtContainer);
+    let orderFoodTitle = document.createElement("p");
+    orderFoodTitle.classList.add("order_food_title");
+    orderFoodTitle.textContent = orderItem.dishTitle;
+    orderFoodTxtContainer.append(orderFoodTitle);
+    let orderFoodDesc = document.createElement("p");
+    orderFoodDesc.classList.add("order_food_desc");
+    orderFoodDesc.textContent = "Description";
+    orderFoodTxtContainer.append(orderFoodDesc);
+    let orderFoodPriceContainer = document.createElement("div");
+    orderFoodPriceContainer.classList.add("order_price_container")
+    orderFoodItem.append(orderFoodPriceContainer);
+    let orderFoodPriceTxt = document.createElement("p");
+    orderFoodPriceTxt.classList.add("order_price_txt");
+    orderFoodPriceTxt.textContent = orderItem.dishPrice;
+    orderFoodPriceContainer.append(orderFoodPriceTxt);
+  }
 }
 
 Telegram.WebApp.onEvent('mainButtonClicked', () => {
-  screenMode.defaultScreenMode();
+  screenMode.orderScreenMode();
+  this.order.dishesList.forEach((item) => {
+    this.createElements(item);
+  });
 });
