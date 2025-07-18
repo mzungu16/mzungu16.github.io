@@ -1,6 +1,6 @@
 class OrderClass {
   orderTitleId = document.getElementById("order_title_id");
-  orderContainerId = document.getElementById("order_id");
+  orderItemList = [];
 
 
   constructor(tg, dishesList, orderComment) {
@@ -25,12 +25,15 @@ class OrderClass {
 
   onBackButtonClickEvent() {
     Telegram.WebApp.onEvent('backButtonClicked', () => {
-      this.orderContainerId.remove();
+      this.orderItemList.forEach((item) => {
+        item.remove();
+      });
     });
   }
 
   elementFunction(orderItem) {
     let orderFoodItem = document.createElement("div");
+    this.orderItemList.push(orderFoodItem);
     let orderImageContainer = document.createElement("div");
     let orderImageValue = document.createElement("img");
     let orderFoodTxtContainer = document.createElement("div");
