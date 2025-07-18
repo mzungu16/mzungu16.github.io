@@ -7,6 +7,7 @@ const screenMode = new ScreenModeBuilder()
   .build();
 const buyBtnClass = new AddBtnClassBuilder()
   .setTg(tg)
+  .setScreenMode(screenMode)
   .build();
 const categoryBtnClass = new CategoryBtnClassBuilder()
   .setTg(tg)
@@ -18,7 +19,5 @@ categoryBtnClass.onCategoryBtnClickEvent();
 buyBtnClass.onAddBtnClickEvent();
 buyBtnClass.onDecrBtnClickEvent();
 buyBtnClass.onIncrBtnClickEvent();
-
-Telegram.WebApp.onEvent('backButtonClicked', () => {
-  screenMode.defaultScreenMode();
-});
+buyBtnClass.onBackButtonClickEvent();
+buyBtnClass.onMainButtonClickEvent();

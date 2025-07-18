@@ -1,4 +1,9 @@
 class OrderClassBuilder {
+  setTg(tg) {
+    this.tg = tg;
+    return this;
+  }
+
   setOrderDishes(dishesList) {
     this.dishesList = dishesList;
     return this;
@@ -10,6 +15,6 @@ class OrderClassBuilder {
   }
 
   build() {
-    return new OrderClass(this.dishesList, this.orderComment);
+    return new OrderClass(this.tg, this.dishesList, this.orderComment);
   }
 }
