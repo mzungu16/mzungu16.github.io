@@ -28,12 +28,14 @@ class OrderClass {
       this.orderItemList.forEach((item) => {
         item.remove();
       });
+      this.orderItemList.slice(0, this.orderItemList.length);
     });
   }
 
   elementFunction(orderItem) {
     let orderFoodItem = document.createElement("div");
     this.orderItemList.push(orderFoodItem);
+
     let orderImageContainer = document.createElement("div");
     let orderImageValue = document.createElement("img");
     let orderFoodTxtContainer = document.createElement("div");
