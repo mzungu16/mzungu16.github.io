@@ -63,11 +63,6 @@ class AddBtnClass {
       .build();
 
     this.dishesList.push(this.dishBuilder);
-
-    this.order = new OrderClassBuilder()
-      .setTg(this.tg)
-      .setOrderDishes(this.dishesList)
-      .build();
   }
 
   handleBtnDecrSubmit() {
@@ -103,6 +98,10 @@ class AddBtnClass {
 
   onMainButtonClickEvent() {
     Telegram.WebApp.onEvent('mainButtonClicked', () => {
+      this.order = new OrderClassBuilder()
+        .setTg(this.tg)
+        .setOrderDishes(this.dishesList)
+        .build();
       this.screenMode.orderScreenMode();
       this.order.createElements();
       this.order.handleCommentSection();
