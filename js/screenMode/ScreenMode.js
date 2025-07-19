@@ -13,7 +13,6 @@ class ScreenMode {
   defaultScreenMode() {
     this.tg.lockOrientation();
     this.tg.BackButton.hide();
-    this.tg.MainButton.hide();
 
     this.categoryContainer.style.display = 'grid';
     this.soupContainer.style.display = 'none';
