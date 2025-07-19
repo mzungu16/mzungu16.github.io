@@ -258,13 +258,14 @@ body {
 .order_comment {
   margin-top: 10px;
   display: flex;
-  border: none;
   background-color: var(--tg-theme-section-bg-color);
 }
 
 .order_comment_txt {
+  width: 100%;
   padding: 10px;
   text-align: start;
+  border: none;
   font-size: 14px;
   color: var(--tg-theme-hint-color);
 }
