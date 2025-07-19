@@ -105,7 +105,7 @@ class AddBtnClass {
       this.screenMode.orderScreenMode();
       this.order.createElements();
       this.order.handleCommentSection();
-      this.order.onBackButtonClickEvent()
+      this.order.onBackButtonClickEvent2()
     });
   }
 
