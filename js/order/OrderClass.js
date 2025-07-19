@@ -29,6 +29,7 @@ class OrderClass {
         item.remove();
       });
       this.orderItemList.slice(0, this.orderItemList.length);
+      this.tg.MainButton.text = "Просмотреть корзину";
     });
   }
 
