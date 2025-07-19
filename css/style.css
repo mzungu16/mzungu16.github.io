@@ -194,7 +194,7 @@ body {
   max-width: var(--max-width-value);
   display: flex;
   justify-content: center;
-  background: var(--tg-theme-bg-color);
+  background-color: var(--tg-theme-section-bg-color);
 }
 
 .order_grid {
@@ -256,26 +256,15 @@ body {
 }
 
 .order_comment {
-  margin: 0;
+  margin-top: 10px;
   display: flex;
+  border: none;
+  background-color: var(--tg-theme-section-bg-color);
 }
 
-.order_comment div[contenteditable] {
-  width: 100%;
-  height: auto;
+.order_comment_txt {
   padding: 10px;
   text-align: start;
-
-  &[placeholder]:empty::before {
-    content: attr(placeholder);
-    z-index: 9;
-    line-height: 1.7;
-    color: var(--tg-theme-hint-color);
-    word-break: break-all;
-    user-select: none;
-  }
-
-  &[placeholder]:empty:focus::before {
-    content: "";
-  }
+  font-size: 14px;
+  color: var(--tg-theme-hint-color);
 }
