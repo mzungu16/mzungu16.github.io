@@ -257,6 +257,7 @@ body {
 
 .order_comment {
   margin-top: 10px;
+  width: 100%;
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
 }
