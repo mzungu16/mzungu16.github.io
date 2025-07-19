@@ -21,8 +21,6 @@ body {
   --desc-txt-font: 14px;
   --image-height-value: 200px;
   --item-radius-value: 10px;
-  /*Переменные главного экрана*/
-  /*Переменные категории супы*/
   --image-border-radius: 10px;
 }
 
@@ -255,4 +253,29 @@ body {
   font-size: 14px;
   font-weight: bold;
   color: var(--tg-theme-text-color);
+}
+
+.order_comment {
+  margin: 0;
+  display: flex;
+}
+
+.order_comment div[contenteditable] {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  text-align: start;
+
+  &[placeholder]:empty::before {
+    content: attr(placeholder);
+    z-index: 9;
+    line-height: 1.7;
+    color: var(--tg-theme-hint-color);
+    word-break: break-all;
+    user-select: none;
+  }
+
+  &[placeholder]:empty:focus::before {
+    content: "";
+  }
 }
