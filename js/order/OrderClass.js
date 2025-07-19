@@ -19,17 +19,12 @@ class OrderClass {
 
   }
 
-  changeMainButton() {
-    this.tg.MainButton.text = "Оплатить";
-  }
-
   onBackButtonClickEvent() {
     Telegram.WebApp.onEvent('backButtonClicked', () => {
       this.orderItemList.forEach((item) => {
         item.remove();
       });
       this.orderItemList.slice(0, this.orderItemList.length);
-      this.tg.MainButton.text = "Просмотреть корзину";
     });
   }
 

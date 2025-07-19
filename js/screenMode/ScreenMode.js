@@ -13,6 +13,9 @@ class ScreenMode {
   defaultScreenMode() {
     this.tg.lockOrientation();
     this.tg.BackButton.hide();
+    if (this.tg.MainButton.isVisible) {
+      this.tg.MainButton.text = "Просмотреть корзину";
+    }
 
     this.categoryContainer.style.display = 'grid';
     this.soupContainer.style.display = 'none';
@@ -73,6 +76,7 @@ class ScreenMode {
   orderScreenMode() {
     this.tg.expand();
     this.tg.BackButton.show();
+    this.tg.MainButton.text = "Оплатить";
 
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';

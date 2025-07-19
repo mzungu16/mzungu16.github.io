@@ -106,7 +106,6 @@ class AddBtnClass {
       this.screenMode.orderScreenMode();
       this.order.createElements();
       this.order.handleCommentSection();
-      this.order.changeMainButton();
       this.order.onBackButtonClickEvent()
     });
   }
