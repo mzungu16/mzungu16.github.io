@@ -226,7 +226,7 @@ body {
 }
 
 .order_food_txt_container {
-  width: 70%;
+  width: fit-content;
 }
 
 .order_food_title {
@@ -248,7 +248,7 @@ body {
 
 .order_price_container {
   margin: 0;
-  width: 30%;
+  width: fit-content;
   text-align: end;
   padding: 5px;
 }
