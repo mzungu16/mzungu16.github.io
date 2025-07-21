@@ -193,7 +193,6 @@ body {
 /*Секция заказа*/
 .order_container {
   justify-content: center;
-  padding: 5px;
 }
 
 .order_grid {
@@ -215,11 +214,12 @@ body {
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
   border-radius: 10px;
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .order_image img {
-  padding-top: 5px;
-  padding-left: 5px;
   width: 80px;
   height: 80px;
   border-radius: var(--image-border-radius);
@@ -228,11 +228,11 @@ body {
 
 .order_food_txt_container {
   width: fit-content;
+  padding-left: 10px;
 }
 
 .order_food_title {
   margin: 0;
-  padding-left: 10px;
   font-size: 16px;
   width: 100%;
   font-weight: bold;
@@ -242,7 +242,6 @@ body {
 .order_food_desc {
   margin: 0;
   width: 100%;
-  padding-left: 10px;
   font-size: var(--desc-txt-font);
   color: var(--tg-theme-hint-color);
 }
@@ -254,7 +253,6 @@ body {
 
 .order_price_txt {
   margin: 0;
-  padding-left: 10px;
   font-size: 14px;
   font-weight: bold;
   text-align: end;
