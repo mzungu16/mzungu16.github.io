@@ -262,8 +262,21 @@ body {
   padding: 5px;
 }
 
-.order_result_txt {
+.order_result_title_txt {
   margin: 0;
+  display: inline-block;
+  width: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--tg-theme-text-color);
+  text-align: start;
+}
+
+.order_result_txt {
+  display: inline-block;
+  margin: 0;
+  width: 50%;
+  text-align: end;
   padding-left: 10px;
   font-size: 14px;
   font-weight: bold;
