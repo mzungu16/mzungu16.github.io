@@ -55,6 +55,7 @@ class OrderClass {
     orderFoodPriceContainer.classList.add("order_price_container")
     orderFoodPriceTxt.classList.add("order_price_txt");
 
+    orderFoodTxtContainer.style.width = "50%";
     orderImageValue.src = "https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg";
     orderFoodTitle.textContent = `${orderItem.dishTitle} x${orderItem.dishCount}`;
     orderFoodDesc.textContent = "Description";
