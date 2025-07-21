@@ -247,7 +247,7 @@ body {
 
 .order_price_container {
   margin: 0;
-  width: fit-content;
+  width: max-content;
   height: fit-content;
 }
 

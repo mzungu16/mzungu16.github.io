@@ -1,5 +1,6 @@
 class OrderClass {
   orderContainerId = document.getElementById("order_id")
+  orderResultContainerId = document.getElementById("order_result_container_id");
   orderTitleId = document.getElementById("order_title_id");
   orderResultId = document.getElementById("order_result_id");
   orderItemList = [];
@@ -65,7 +66,7 @@ class OrderClass {
     orderFoodPriceTxt.textContent = `${foodItemResult} ₽`;
     this.orderResultSumList.push(foodItemResult);
 
-    this.orderContainerId.append(orderFoodItem);
+    this.orderContainerId.insertBefore(orderFoodItem, this.orderResultContainerId);
     orderFoodItem.append(orderImageContainer);
     orderImageContainer.append(orderImageValue);
     orderFoodItem.append(orderFoodTxtContainer);
