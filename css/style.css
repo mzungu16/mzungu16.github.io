@@ -193,7 +193,6 @@ body {
 /*Секция заказа*/
 .order_container {
   max-width: var(--max-width-value);
-  display: flex;
   justify-content: center;
   background-color: var(--tg-theme-section-bg-color);
 }
