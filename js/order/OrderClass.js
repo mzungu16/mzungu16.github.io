@@ -20,7 +20,7 @@ class OrderClass {
     this.orderResultSumList.forEach((item) => {
       sum += item;
     });
-    this.orderResultId.textContent = sum;
+    this.orderResultId.textContent = `${sum} ₽`;
   }
 
   handleCommentSection() {
@@ -59,8 +59,8 @@ class OrderClass {
     orderFoodTitle.textContent = `${orderItem.dishTitle} x${orderItem.dishCount}`;
     orderFoodDesc.textContent = "Description";
     let priceSplitStr = orderItem.dishPrice.split(" ");
-    orderFoodPriceTxt.textContent = `${parseInt(priceSplitStr[2])} ₽`;
-    this.orderResultSumList.push(parseInt(orderFoodPriceTxt.textContent));
+    orderFoodPriceTxt.textContent = `${parseInt(orderItem.dishCount) * parseInt(priceSplitStr[2])} ₽`;
+    this.orderResultSumList.push(parseInt(priceSplitStr[2]));
 
     this.orderTitleId.append(orderFoodItem);
     orderFoodItem.append(orderImageContainer);
