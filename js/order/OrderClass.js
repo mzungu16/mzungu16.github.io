@@ -55,10 +55,10 @@ class OrderClass {
     orderFoodPriceContainer.classList.add("order_price_container")
     orderFoodPriceTxt.classList.add("order_price_txt");
 
-    orderFoodTxtContainer.style.width = "50%";
-    orderImageValue.src = "https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg";
+    orderFoodTxtContainer.style.width = "200px";
+    orderImageValue.src = orderItem.dishPicture;
     orderFoodTitle.textContent = `${orderItem.dishTitle} x${orderItem.dishCount}`;
-    orderFoodDesc.textContent = "Description";
+    orderFoodDesc.textContent = orderItem.dishDesc;
     let priceSplitStr = orderItem.dishPrice.split(" ");
     let foodItemResult = parseInt(orderItem.dishCount) * parseInt(priceSplitStr[2]);
     orderFoodPriceTxt.textContent = `${foodItemResult} ₽`;
