@@ -194,6 +194,7 @@ body {
 .order_container {
   max-width: var(--max-width-value);
   display: flex;
+  padding: 5px;
   justify-content: center;
 }
 
@@ -233,21 +234,19 @@ body {
 .order_food_title {
   margin: 0;
   font-size: 16px;
-  width: 100%;
   font-weight: bold;
   color: var(--tg-theme-text-color);
 }
 
 .order_food_desc {
   margin: 0;
-  width: 100%;
   font-size: var(--desc-txt-font);
   color: var(--tg-theme-hint-color);
 }
 
 .order_price_container {
   margin: 0;
-  width: max-content;
+  width: fit-content;
   height: fit-content;
 }
 
@@ -263,7 +262,6 @@ body {
   margin-top: 10px;
   width: 100%;
   display: flex;
-  padding: 5px;
   background-color: var(--tg-theme-section-bg-color);
 }
 
