@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 5px;
   background: var(--tg-theme-bg-color);
   font-weight: 400;
   font-family: var(--default-font);
@@ -28,6 +27,7 @@ body {
 .category_container {
   max-width: var(--max-width-value);
   display: flex;
+  padding: 5px;
   justify-content: center;
   background: var(--tg-theme-bg-color);
 }
@@ -74,6 +74,7 @@ body {
 .food_container {
   max-width: var(--max-width-value);
   display: flex;
+  padding: 5px;
   justify-content: center;
   background: var(--tg-theme-bg-color);
 }
@@ -218,10 +219,15 @@ body {
 
 .order_image img {
   padding-top: 5px;
+  padding-left: 5px;
   width: 80px;
   height: 80px;
   border-radius: var(--image-border-radius);
   object-fit: cover;
+}
+
+.order_food_txt_container {
+  width: max-content;
 }
 
 .order_food_title {
@@ -243,7 +249,6 @@ body {
 
 .order_price_container {
   margin: 0;
-  width: 100%;
   text-align: end;
   padding: 5px;
 }

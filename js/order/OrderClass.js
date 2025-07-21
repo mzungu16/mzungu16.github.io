@@ -50,20 +50,17 @@ class OrderClass {
 
     orderFoodItem.classList.add("order_food_item");
     orderImageContainer.classList.add("order_image");
+    orderFoodTxtContainer.classList.add("order_food_txt_container");
     orderFoodTitle.classList.add("order_food_title");
     orderFoodDesc.classList.add("order_food_desc");
     orderFoodPriceContainer.classList.add("order_price_container")
     orderFoodPriceTxt.classList.add("order_price_txt");
 
-    orderFoodTxtContainer.style.width = "50%";
     orderImageValue.src = orderItem.dishPicture;
     orderFoodTitle.textContent = `${orderItem.dishTitle} x${orderItem.dishCount}`;
-    orderFoodTitle.style.width = "100%";
     orderFoodDesc.textContent = orderItem.dishDesc;
-    orderFoodDesc.style.width = "100%";
     let priceSplitStr = orderItem.dishPrice.split(" ");
     let foodItemResult = parseInt(orderItem.dishCount) * parseInt(priceSplitStr[2]);
-    orderFoodPriceContainer.style.width = "50%";
     orderFoodPriceTxt.textContent = `${foodItemResult} ₽`;
     this.orderResultSumList.push(foodItemResult);
 
