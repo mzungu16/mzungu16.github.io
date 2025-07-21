@@ -1,6 +1,8 @@
 class OrderClass {
   orderTitleId = document.getElementById("order_title_id");
+  orderResultId = document.getElementById("order_result_id");
   orderItemList = [];
+  orderResultSumList = [];
 
 
   constructor(tg, dishesList, orderComment) {
@@ -13,6 +15,12 @@ class OrderClass {
     this.dishesList.forEach((item) => {
       this.elementFunction(item);
     });
+
+    let sum = 0;
+    this.orderResultSumList.forEach((item) => {
+      sum += item;
+    });
+    this.orderResultId.textContent = sum;
   }
 
   handleCommentSection() {
@@ -48,9 +56,11 @@ class OrderClass {
     orderFoodPriceTxt.classList.add("order_price_txt");
 
     orderImageValue.src = "https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg";
-    orderFoodTitle.textContent = orderItem.dishTitle;
+    orderFoodTitle.textContent = `${orderItem.dishTitle} x${orderItem.dishCount}`;
     orderFoodDesc.textContent = "Description";
-    orderFoodPriceTxt.textContent = orderItem.dishPrice;
+    let priceSplitStr = orderItem.dishPrice.split(" ");
+    orderFoodPriceTxt.textContent = `${parseInt(orderItem.dishCount) * parseInt(priceSplitStr[1])} ₽`;
+    this.orderResultSumList.push(parseInt(orderFoodPriceTxt.textContent));
 
     this.orderTitleId.append(orderFoodItem);
     orderFoodItem.append(orderImageContainer);
