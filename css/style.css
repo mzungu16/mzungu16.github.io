@@ -198,7 +198,6 @@ body {
 }
 
 .order_grid {
-  margin: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
