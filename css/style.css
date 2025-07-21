@@ -199,6 +199,7 @@ body {
 }
 
 .order_grid {
+  margin: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -253,6 +254,7 @@ body {
 .order_price_txt {
   margin: 0;
   font-size: 14px;
+  white-space: nowrap;
   font-weight: bold;
   text-align: end;
   color: var(--tg-theme-text-color);
