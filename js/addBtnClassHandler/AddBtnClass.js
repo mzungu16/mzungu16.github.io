@@ -3,7 +3,9 @@ class AddBtnClass {
   decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
   foodContainerList = document.querySelectorAll(".food_counter");
   incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
+  foodDishPictureList = document.querySelectorAll(".food_image")
   foodTitleList = document.querySelectorAll(".food_title_txt");
+  foodDescList = document.querySelectorAll(".food_desc_txt");
   foodPriceList = document.querySelectorAll(".food_price_txt");
   foodCountList = document.querySelectorAll(".food_counter");
   order = new OrderClassBuilder().build();
@@ -57,7 +59,9 @@ class AddBtnClass {
     this.dishBuilder = new DishClassBuilder()
       .setId(this.index)
       .setElementPos(this.index)
+      .setDishPicture(this.foodDishPictureList[this.index].getElementsByTagName('img')[0].src)
       .setTitle(this.foodTitleList[this.index].textContent)
+      .setDescription(this.foodDescList[this.index].textContent)
       .setPrice(this.foodPriceList[this.index].textContent)
       .setCount(this.foodCountList[this.index].textContent)
       .build();

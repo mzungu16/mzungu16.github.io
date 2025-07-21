@@ -9,8 +9,18 @@ class DishClassBuilder {
     return this;
   }
 
+  setDishPicture(dishPicture) {
+    this.dishPicture = dishPicture
+    return this;
+  }
+
   setTitle(dishTitle) {
     this.dishTitle = dishTitle;
+    return this;
+  }
+
+  setDescription(dishDesc) {
+    this.dishDesc = dishDesc
     return this;
   }
 
@@ -25,6 +35,6 @@ class DishClassBuilder {
   }
 
   build() {
-    return new DishClass(this.dishId, this.dishPosition, this.dishTitle, this.dishPrice, this.dishCount);
+    return new DishClass(this.dishId, this.dishPosition, this.dishPicture, this.dishTitle, this.dishDesc, this.dishPrice, this.dishCount);
   }
 }
