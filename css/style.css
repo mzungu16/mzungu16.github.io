@@ -215,9 +215,6 @@ body {
 .order_food_item {
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
-  padding-top: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
 }
 
 .order_image img {
@@ -230,6 +227,7 @@ body {
 .order_food_txt_container {
   width: fit-content;
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 .order_food_title {
@@ -250,6 +248,7 @@ body {
 .order_price_container {
   margin: 0;
   width: fit-content;
+  height: fit-content;
 }
 
 .order_price_txt {
