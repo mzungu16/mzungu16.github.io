@@ -26,9 +26,7 @@ class OrderClass {
   }
 
   onClosedAlertEvent() {
-    if (this.dishesList.length >= 1) {
-      this.tg.enableClosingConfirmation();
-    }
+
   }
 
   onBackButtonClickEvent2() {

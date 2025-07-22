@@ -67,6 +67,10 @@ class AddBtnClass {
       .build();
 
     this.dishesList.push(this.dishBuilder);
+
+    if (this.dishesList.length >= 1) {
+      this.tg.enableClosingConfirmation();
+    }
   }
 
   handleBtnDecrSubmit() {
