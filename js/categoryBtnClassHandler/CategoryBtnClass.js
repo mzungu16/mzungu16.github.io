@@ -1,10 +1,9 @@
 class CategoryBtnClass {
   categoryBtnList = document.querySelectorAll(".category_btn");
 
-  constructor(telegram, screenMode, buyBtn) {
+  constructor(telegram, screenMode) {
     this.tg = telegram;
     this.screenMode = screenMode;
-    this.buyBtn = buyBtn;
   }
 
   onCategoryBtnClickEvent() {
@@ -18,16 +17,16 @@ class CategoryBtnClass {
   openDivSection(category_txt) {
     switch (category_txt) {
       case "супы":
-        this.screenMode.soupsScreenMode(this.buyBtn);
+        this.screenMode.soupsScreenMode();
         break;
       case "вторые блюда":
-        this.screenMode.dishesScreenMode(this.buyBtn);
+        this.screenMode.dishesScreenMode();
         break;
       case "закуски":
-        this.screenMode.lunchScreenMode(this.buyBtn);
+        this.screenMode.lunchScreenMode();
         break;
       case "напитки":
-        this.screenMode.drinksScreenMode(this.buyBtn);
+        this.screenMode.drinksScreenMode();
         break;
     }
   }
