@@ -81,6 +81,7 @@ class AddBtnClass {
           this.dishesList.splice(indexElement, 1);
           if (this.dishesList.length === 0) {
             this.tg.MainButton.hide();
+            this.tg.disableClosingConfirmation();
           }
         } else {
           let counter = parseInt(item.dishCount);
