@@ -260,6 +260,7 @@ body {
   margin: 0;
   font-size: 14px;
   white-space: nowrap;
+  padding: 5px;
   font-weight: bold;
   text-align: end;
   color: var(--tg-theme-text-color);
