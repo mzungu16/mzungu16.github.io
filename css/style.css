@@ -276,6 +276,7 @@ body {
   margin: 0;
   display: inline-block;
   font-size: 20px;
+  width: 50%;
   font-weight: bold;
   color: var(--tg-theme-text-color);
   text-align: start;
@@ -284,6 +285,7 @@ body {
 .order_result_txt {
   display: inline-block;
   margin: 0;
+  width: 50%;
   text-align: end;
   font-size: 14px;
   justify-content: center;
@@ -293,7 +295,7 @@ body {
 
 .order_comment {
   margin-top: 10px;
-  width: fit-content;
+  width: 100%;
   padding-left: 5px;
   padding-right: 5px;
   background-color: var(--tg-theme-section-bg-color);
