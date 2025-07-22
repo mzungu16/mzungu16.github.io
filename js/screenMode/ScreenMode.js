@@ -25,7 +25,7 @@ class ScreenMode {
     this.orderContainer.style.display = 'none';
   }
 
-  soupsScreenMode(buyBtnClass) {
+  soupsScreenMode() {
     this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
@@ -36,7 +36,7 @@ class ScreenMode {
     this.orderContainer.style.display = 'none';
   }
 
-  dishesScreenMode(buyBtnClass) {
+  dishesScreenMode() {
     this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
@@ -47,7 +47,7 @@ class ScreenMode {
     this.orderContainer.style.display = 'none';
   }
 
-  lunchScreenMode(buyBtnClass) {
+  lunchScreenMode() {
     this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
@@ -58,7 +58,7 @@ class ScreenMode {
     this.orderContainer.style.display = 'none';
   }
 
-  drinksScreenMode(buyBtnClass) {
+  drinksScreenMode() {
     this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
@@ -69,7 +69,7 @@ class ScreenMode {
     this.orderContainer.style.display = 'none';
   }
 
-  orderScreenMode(orderClass) {
+  orderScreenMode() {
     this.telegramEditing();
     this.tg.MainButton.text = "Оплатить";
 
