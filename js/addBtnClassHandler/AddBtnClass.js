@@ -75,6 +75,9 @@ class AddBtnClass {
         if (this.foodContainerList[item.dishPosition].textContent <= "1") {
           this.showAddBtn(item);
           this.dishesList.splice(indexElement, 1);
+          if (this.dishesList.length === 0) {
+            this.tg.MainButton.hide();
+          }
         } else {
           let counter = parseInt(item.dishCount);
           item.dishCount = counter - 1;
