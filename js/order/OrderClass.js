@@ -25,6 +25,15 @@ class OrderClass {
     this.orderResultId.textContent = `${sum} ₽`;
   }
 
+  onClosedAlertEvent() {
+    this.tg.enableClosingConfirmation();
+    if (this.dishesList.length >= 1) {
+      this.tg.showConfirm("Hi", () => {
+
+      });
+    }
+  }
+
   onBackButtonClickEvent2() {
     Telegram.WebApp.onEvent('backButtonClicked', () => {
       this.orderItemList.forEach((item) => {

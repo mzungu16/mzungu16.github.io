@@ -111,7 +111,8 @@ class AddBtnClass {
         .build();
       this.screenMode.orderScreenMode();
       this.order.createElements();
-      this.order.onBackButtonClickEvent2()
+      this.order.onClosedAlertEvent();
+      this.order.onBackButtonClickEvent2();
     });
   }
 
