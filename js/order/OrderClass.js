@@ -1,8 +1,8 @@
 class OrderClass {
   orderContainerId = document.getElementById("order_id")
   orderResultContainerId = document.getElementById("order_result_container_id");
-  orderTitleId = document.getElementById("order_title_id");
   orderResultId = document.getElementById("order_result_id");
+  orderCommentId = document.getElementById("order_comment_id");
   orderItemList = [];
   orderResultSumList = [];
 
@@ -65,6 +65,7 @@ class OrderClass {
     let foodItemResult = parseInt(orderItem.dishCount) * parseInt(priceSplitStr[2]);
     orderFoodPriceTxt.textContent = `${foodItemResult} ₽`;
     this.orderResultSumList.push(foodItemResult);
+    this.orderComment = this.orderCommentId.textContent;
 
     this.orderContainerId.insertBefore(orderFoodItem, this.orderResultContainerId);
     orderFoodItem.append(orderImageContainer);

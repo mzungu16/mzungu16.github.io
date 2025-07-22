@@ -25,9 +25,8 @@ class ScreenMode {
     this.orderContainer.style.display = 'none';
   }
 
-  soupsScreenMode() {
-    this.tg.expand();
-    this.tg.BackButton.show();
+  soupsScreenMode(buyBtnClass) {
+    this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'grid';
@@ -35,11 +34,16 @@ class ScreenMode {
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'none';
     this.orderContainer.style.display = 'none';
+
+    buyBtnClass.onAddBtnClickEvent();
+    buyBtnClass.onDecrBtnClickEvent();
+    buyBtnClass.onIncrBtnClickEvent();
+    buyBtnClass.onBackButtonClickEvent();
+    buyBtnClass.onMainButtonClickEvent();
   }
 
-  dishesScreenMode() {
-    this.tg.expand();
-    this.tg.BackButton.show();
+  dishesScreenMode(buyBtnClass) {
+    this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';
@@ -47,11 +51,16 @@ class ScreenMode {
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'none';
     this.orderContainer.style.display = 'none';
+
+    buyBtnClass.onAddBtnClickEvent();
+    buyBtnClass.onDecrBtnClickEvent();
+    buyBtnClass.onIncrBtnClickEvent();
+    buyBtnClass.onBackButtonClickEvent();
+    buyBtnClass.onMainButtonClickEvent();
   }
 
-  lunchScreenMode() {
-    this.tg.expand();
-    this.tg.BackButton.show();
+  lunchScreenMode(buyBtnClass) {
+    this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';
@@ -59,11 +68,16 @@ class ScreenMode {
     this.lunchContainer.style.display = 'grid';
     this.drinksContainer.style.display = 'none';
     this.orderContainer.style.display = 'none';
+
+    buyBtnClass.onAddBtnClickEvent();
+    buyBtnClass.onDecrBtnClickEvent();
+    buyBtnClass.onIncrBtnClickEvent();
+    buyBtnClass.onBackButtonClickEvent();
+    buyBtnClass.onMainButtonClickEvent();
   }
 
-  drinksScreenMode() {
-    this.tg.expand();
-    this.tg.BackButton.show();
+  drinksScreenMode(buyBtnClass) {
+    this.telegramEditing();
 
     this.categoryContainer.style.display = 'none';
     this.soupContainer.style.display = 'none';
@@ -71,11 +85,16 @@ class ScreenMode {
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'grid';
     this.orderContainer.style.display = 'none';
+
+    buyBtnClass.onAddBtnClickEvent();
+    buyBtnClass.onDecrBtnClickEvent();
+    buyBtnClass.onIncrBtnClickEvent();
+    buyBtnClass.onBackButtonClickEvent();
+    buyBtnClass.onMainButtonClickEvent();
   }
 
-  orderScreenMode() {
-    this.tg.expand();
-    this.tg.BackButton.show();
+  orderScreenMode(orderClass) {
+    this.telegramEditing();
     this.tg.MainButton.text = "Оплатить";
 
     this.categoryContainer.style.display = 'none';
@@ -84,5 +103,14 @@ class ScreenMode {
     this.lunchContainer.style.display = 'none';
     this.drinksContainer.style.display = 'none';
     this.orderContainer.style.display = 'grid';
+
+    orderClass.createElements();
+    orderClass.handleCommentSection();
+    orderClass.onBackButtonClickEvent2()
+  }
+
+  telegramEditing() {
+    this.tg.expand();
+    this.tg.BackButton.show();
   }
 }

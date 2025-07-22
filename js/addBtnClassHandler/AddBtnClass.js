@@ -106,10 +106,7 @@ class AddBtnClass {
         .setTg(this.tg)
         .setOrderDishes(this.dishesList)
         .build();
-      this.screenMode.orderScreenMode();
-      this.order.createElements();
-      this.order.handleCommentSection();
-      this.order.onBackButtonClickEvent2()
+      this.screenMode.orderScreenMode(this.order);
     });
   }
 
