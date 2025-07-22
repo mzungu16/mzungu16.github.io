@@ -296,7 +296,6 @@ body {
 .order_comment {
   display: flex;
   margin-top: 10px;
-  width: 100%;
   margin-left: 5px;
   margin-right: 5px;
   background-color: var(--tg-theme-section-bg-color);
