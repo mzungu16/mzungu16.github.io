@@ -13,7 +13,7 @@ body {
   --ripple-duration: .45s;
   --ripple-end-duration: .3s;
   /*Общие переменные*/
-  --max-width-value: 390px;
+  --max-width-value: 480px;
   --grid-gap-value: 10px;
   --btn-border-radius-angles: 10px;
   --title-txt-font: 16px;
@@ -193,13 +193,13 @@ body {
 /*Секция заказа*/
 .order_container {
   max-width: var(--max-width-value);
+  width: max-content;
   display: flex;
   padding: 5px;
   justify-content: center;
 }
 
 .order_grid {
-  margin: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -215,6 +215,7 @@ body {
 }
 
 .order_food_item {
+  padding-top: 10px;
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
 }
