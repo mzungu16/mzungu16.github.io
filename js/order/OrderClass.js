@@ -26,11 +26,8 @@ class OrderClass {
   }
 
   onClosedAlertEvent() {
-    this.tg.enableClosingConfirmation();
     if (this.dishesList.length >= 1) {
-      this.tg.showConfirm("Hi", () => {
-
-      });
+      this.tg.enableClosingConfirmation();
     }
   }
 
