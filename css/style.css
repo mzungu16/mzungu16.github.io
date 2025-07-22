@@ -26,8 +26,8 @@ body {
 /*Секция главного экрана категорий*/
 .category_container {
   max-width: var(--max-width-value);
+  width: fit-content;
   display: flex;
-  padding: 5px;
   justify-content: center;
   background: var(--tg-theme-bg-color);
 }
@@ -73,9 +73,9 @@ body {
 /*Секция блюд*/
 .food_container {
   max-width: var(--max-width-value);
+  width: fit-content;
   display: flex;
-  padding: 5px;
-  justify-content: center;
+  justify-content: center;;
   background: var(--tg-theme-bg-color);
 }
 
