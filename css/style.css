@@ -221,6 +221,7 @@ body {
   padding-right: 5px;
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
+  border-radius: 10px;
 }
 
 .order_image img {
@@ -269,7 +270,6 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   display: flex;
-  background-color: var(--tg-theme-section-bg-color);
 }
 
 .order_result_title_txt {
@@ -294,10 +294,11 @@ body {
 }
 
 .order_comment {
+  display: flex;
   margin-top: 10px;
   width: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   background-color: var(--tg-theme-section-bg-color);
   text-align: start;
   border: none;
