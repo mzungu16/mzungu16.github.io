@@ -25,10 +25,6 @@ class OrderClass {
     this.orderResultId.textContent = `${sum} ₽`;
   }
 
-  handleCommentSection() {
-
-  }
-
   onBackButtonClickEvent2() {
     Telegram.WebApp.onEvent('backButtonClicked', () => {
       this.orderItemList.forEach((item) => {
