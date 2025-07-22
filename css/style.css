@@ -193,9 +193,8 @@ body {
 /*Секция заказа*/
 .order_container {
   max-width: var(--max-width-value);
-  width: max-content;
+  width: fit-content;
   display: flex;
-  padding: 5px;
   justify-content: center;
 }
 
@@ -216,6 +215,8 @@ body {
 
 .order_food_item {
   padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
 }
@@ -263,6 +264,8 @@ body {
 
 .order_result_container {
   margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 100%;
   display: flex;
   background-color: var(--tg-theme-section-bg-color);
@@ -291,6 +294,8 @@ body {
 .order_comment {
   margin-top: 10px;
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: var(--tg-theme-section-bg-color);
   text-align: start;
   border: none;
