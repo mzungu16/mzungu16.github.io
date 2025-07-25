@@ -9,7 +9,7 @@ body {
 /*Секция главного экрана категорий*/
 .category_section {
   max-width: 480px;
-  width: min-content;
+  width: fit-content;
   display: flex;
   justify-content: center;
 }
