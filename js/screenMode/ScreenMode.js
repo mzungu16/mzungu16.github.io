@@ -6,8 +6,8 @@ class ScreenMode {
   drinksContainer = document.getElementById("drinks_id");
   orderContainer = document.getElementById("order_id");
 
-  viewList = [this.categoryContainer.id, this.soupContainer.id, this.dishesContainer.id,
-    this.lunchContainer.id, this.drinksContainer.id, this.orderContainer.id];
+  viewList = [this.categoryContainer, this.soupContainer, this.dishesContainer,
+    this.lunchContainer, this.drinksContainer, this.orderContainer];
 
   constructor(telegram) {
     this.tg = telegram;
@@ -15,7 +15,7 @@ class ScreenMode {
 
   defaultScreenMode() {
     this.telegramSetup();
-    this.sectionsSetup(this.categoryContainer.id);
+    this.sectionsSetup(this.categoryContainer);
   }
 
   /*
@@ -88,14 +88,14 @@ class ScreenMode {
     }
   }
 
-  sectionsSetup(htmlElementId) {
+  sectionsSetup(htmlElement) {
     this.viewList.forEach((item) => {
-      console.log(`₽ - section setup || item.id - ${item} || htmlElement.id - ${htmlElementId}`);
-      if (item === htmlElementId) {
+      console.log(`₽ - section setup || item.id - ${item.id} || htmlElement.id - ${htmlElement.id}`);
+      if (item.id === htmlElement.id) {
         console.log("₽ - check of item is valid - ", true);
-        htmlElementId.style.display = 'grid';
+        htmlElement.style.display = 'grid';
       } else {
-        htmlElementId.style.display = 'none';
+        htmlElement.style.display = 'none';
       }
     });
   }
