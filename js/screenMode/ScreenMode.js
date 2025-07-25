@@ -14,9 +14,8 @@ class ScreenMode {
   }
 
   defaultScreenMode() {
-    console.log("DefaultScreen func")
     this.telegramSetup();
-    // this.sectionsSetup(this.categoryContainer.id);
+    this.sectionsSetup(this.categoryContainer.id);
   }
 
   /*
@@ -82,19 +81,18 @@ class ScreenMode {
     }*/
 
   telegramSetup() {
-    console.log("Telegram setup - ", true);
+    console.log("₽ - telegram setup - ", true);
     this.tg.BackButton.hide();
     if (this.tg.MainButton.isVisible) {
-      console.log("Main button setup - ", true);
       this.tg.MainButton.text = "Просмотреть корзину";
     }
   }
 
   sectionsSetup(htmlElement) {
     this.viewList.forEach((item) => {
-      console.log(`Section setup || item.id - ${item.id} || htmlElement.id - ${htmlElement.id}`);
+      console.log(`₽ - section setup || item.id - ${item.id} || htmlElement.id - ${htmlElement.id}`);
       if (item.id === htmlElement.id) {
-        console.log("Check of item is valid - ", true);
+        console.log("₽ - check of item is valid - ", true);
         htmlElement.style.display = 'grid';
       } else {
         htmlElement.style.display = 'none';
