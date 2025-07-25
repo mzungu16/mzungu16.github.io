@@ -15,9 +15,9 @@ const categoryBtnClass = new CategoryBtnClassBuilder()
 
 screenMode.defaultScreenMode();
 categoryBtnClass.onCategoryBtnClickEvent();
-buyBtnClass.onAddBtnClickEvent();
-buyBtnClass.onDecrBtnClickEvent();
-buyBtnClass.onIncrBtnClickEvent();
+// buyBtnClass.onAddBtnClickEvent();
+// buyBtnClass.onDecrBtnClickEvent();
+// buyBtnClass.onIncrBtnClickEvent();
 buyBtnClass.onBackButtonClickEvent();
-buyBtnClass.onMainButtonClickEvent();
-buyBtnClass.onBackClick();
+// buyBtnClass.onMainButtonClickEvent();
+// buyBtnClass.onBackClick();
