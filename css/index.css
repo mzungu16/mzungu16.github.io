@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #ffffff;
+  background: white;
   font-weight: 400;
   font-family: var(--default-font);
   font-size: 13px;
@@ -23,7 +23,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  gap: var(--grid-gap-value);
+  gap: 10px;
   height: auto;
 }
 
@@ -70,7 +70,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  gap: var(--grid-gap-value);
+  gap: 10px;
   height: auto;
 }
 
@@ -307,9 +307,9 @@ body {
   margin-right: 5px;
   background: #EFEFEF;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
   text-align: start;
   border: none;
+  border-radius: 10px;
   color: var(--tg-theme-hint-color);
   font-size: 16px;
   height: 150px;
