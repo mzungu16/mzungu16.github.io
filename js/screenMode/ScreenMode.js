@@ -94,8 +94,10 @@ class ScreenMode {
       if (item.id === htmlElement.id) {
         console.log("₽ - check of item is valid - ", true);
         htmlElement.style.display = 'grid';
+        console.log(`₽ ${htmlElement.style.display}`);
       } else {
         htmlElement.style.display = 'none';
+        console.log(`₽ ${htmlElement.style.display}`);
       }
     });
   }
