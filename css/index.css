@@ -1,21 +1,12 @@
 body {
   margin: 0;
-  background: var(--tg-theme-bg-color);
+  background: #ffffff;
   font-weight: 400;
   font-family: var(--default-font);
   font-size: 13px;
   touch-action: manipulation;
 
   --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  /*Общие переменные*/
-  --max-width-value: 480px;
-  --grid-gap-value: 10px;
-  --btn-border-radius-angles: 10px;
-  --title-txt-font: 16px;
-  --desc-txt-font: 14px;
-  --image-height-value: 200px;
-  --item-radius-value: 10px;
-  --image-border-radius: 10px;
 }
 
 /*Секция главного экрана категорий*/
