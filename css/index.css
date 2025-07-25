@@ -7,11 +7,6 @@ body {
   touch-action: manipulation;
 
   --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --page-animation-duration: .3s;
-  --animation: .15s ease;
-  --page-animation: var(--page-animation-duration) ease;
-  --ripple-duration: .45s;
-  --ripple-end-duration: .3s;
   /*Общие переменные*/
   --max-width-value: 480px;
   --grid-gap-value: 10px;
@@ -24,12 +19,12 @@ body {
 }
 
 /*Секция главного экрана категорий*/
-.category_container {
-  max-width: var(--max-width-value);
+.category_section {
+  max-width: 480px;
   width: fit-content;
   display: flex;
   justify-content: center;
-  background: var(--tg-theme-bg-color);
+  background: white;
 }
 
 .category_grid {
@@ -41,42 +36,42 @@ body {
   height: auto;
 }
 
-.category_image img {
-  width: 100%;
-  height: var(--image-height-value);
-  border-top-left-radius: var(--btn-border-radius-angles);
-  border-top-right-radius: var(--btn-border-radius-angles);
-  object-fit: cover;
-}
-
 .category_item {
   width: fit-content;
   height: fit-content;
   text-align: center;
-  border-radius: var(--item-radius-value);
-  background: var(--tg-theme-section-bg-color);
+  border-radius: 10px;
+  background: #EFEFEF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.category_image img {
+  width: 200px;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
 }
 
 .category_btn {
   display: inline-block;
-  width: 100%;
+  width: 190px;
   padding: 10px 10px;
+  margin: 5px;
   border: none;
   background: rgb(248, 168, 24);
-  border-bottom-left-radius: var(--btn-border-radius-angles);
-  border-bottom-right-radius: var(--btn-border-radius-angles);
+  border-radius: 10px;
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 /*Секция блюд*/
-.food_container {
-  max-width: var(--max-width-value);
+.food_section {
+  max-width: 480px;
   width: fit-content;
   display: flex;
   justify-content: center;;
-  background: var(--tg-theme-bg-color);
 }
 
 .food_grid {
@@ -88,52 +83,71 @@ body {
   height: auto;
 }
 
+.food_item {
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  border-radius: 10px;
+  background: #EFEFEF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.food_image img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
 .food_txt_container {
-  margin: 0;
-  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.food_title_container {
+  display: flex;
 }
 
 .food_title_txt {
   margin: 0;
-  font-size: var(--title-txt-font);
+  width: 50%;
+  display: inline-block;
+  font-size: 16px;
   font-weight: bold;
   color: var(--tg-theme-text-color);
   text-align: start;
 }
 
-.food_desc_txt {
+.food_v {
   margin: 0;
-  font-size: var(--desc-txt-font);
-  color: var(--tg-theme-hint-color);
-  text-align: start;
+  width: 50%;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--tg-theme-subtitle-text-color);
+  text-align: end;
 }
 
 .food_price_txt {
   margin: 0;
-  font-size: var(--desc-txt-font);
+  font-size: 14px;
+  font-weight: bold;
   color: var(--tg-theme-subtitle-text-color);
   text-align: start;
 }
 
-.food_image img {
-  width: 100%;
-  height: var(--image-height-value);
-  border-radius: var(--image-border-radius);
-  object-fit: cover;
-}
-
-.food_item {
-  width: fit-content;
-  height: fit-content;
-  text-align: center;
-  border-radius: var(--item-radius-value);
-  background: var(--tg-theme-section-bg-color);
+.food_desc_txt {
+  margin: 0;
+  font-size: 14px;
+  color: var(--tg-theme-hint-color);
+  text-align: start;
 }
 
 .food_item_buttons {
   display: flex;
   justify-content: space-between;
-  margin: 0;
+  margin: 5px;
   position: relative;
 }
 
@@ -141,9 +155,9 @@ body {
   touch-action: manipulation;
   border: none;
   width: 40%;
-  background-color: #e64d44;
+  background: #CC261F;
   border-radius: 10px;
-  color: #fff;
+  color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
@@ -167,9 +181,9 @@ body {
   touch-action: manipulation;
   display: none;
   border-radius: 10px;
-  background: rgb(54, 248, 24);
+  background: #B2E21C;
   border: none;
-  color: #fff;
+  color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
@@ -182,23 +196,24 @@ body {
   width: 100%;
   padding: 10px 10px;
   border: none;
-  background: rgb(248, 168, 24);
+  background: #D7951D;
   border-radius: 10px;
-  color: #fff;
+  color: #ffffff;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 /*Секция заказа*/
-.order_container {
-  max-width: var(--max-width-value);
+.order_section {
+  max-width: 480px;
   width: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: center;;
 }
 
 .order_grid {
+  margin: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
@@ -209,8 +224,6 @@ body {
   margin: 0;
   font-size: 20px;
   font-weight: bold;
-  padding-left: 5px;
-  padding-right: 5px;
   color: var(--tg-theme-text-color);
   text-align: start;
 }
@@ -220,14 +233,16 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   display: flex;
-  background-color: var(--tg-theme-section-bg-color);
+  background: #EFEFEF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
 .order_image img {
   width: 100px;
   height: 100px;
-  border-radius: var(--image-border-radius);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   object-fit: cover;
 }
 
@@ -246,7 +261,7 @@ body {
 
 .order_food_desc {
   margin: 0;
-  font-size: var(--desc-txt-font);
+  font-size: 14px;
   color: var(--tg-theme-hint-color);
 }
 
@@ -299,7 +314,8 @@ body {
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: var(--tg-theme-section-bg-color);
+  background: #EFEFEF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   text-align: start;
   border: none;
   color: var(--tg-theme-hint-color);

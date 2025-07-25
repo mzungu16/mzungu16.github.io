@@ -37,24 +37,14 @@
   </script>
   <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script>
-  <script src="js/order/OrderClassBuilder.js"></script>
-  <script src="js/order/OrderClass.js"></script>
-  <script src="js/dish/DishClassBuilder.js"></script>
-  <script src="js/dish/DishClass.js"></script>
-  <script src="js/categoryBtnClassHandler/CategoryBtnClassBuilder.js"></script>
-  <script src="js/categoryBtnClassHandler/CategoryBtnClass.js"></script>
-  <script src="js/addBtnClassHandler/AddBtnClassBuilder.js"></script>
-  <script src="js/addBtnClassHandler/AddBtnClass.js"></script>
-  <script src="js/screenMode/ScreenModeBuilder.js"></script>
-  <script src="js/screenMode/ScreenMode.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
   <title>Document</title>
 </head>
 <body>
 <!--Секция главного экрана с категориями-->
-<div class="category_container category_grid" id="category_id">
+<section class="category_section category_grid" id="category_id">
   <div class="category_item">
     <div class="category_image">
       <img src="https://i.postimg.cc/fWKQXRst/500a3512e536162c204f.jpg"
@@ -83,156 +73,152 @@
     </div>
     <button class="category_btn" id="btnDrink">Напитки</button>
   </div>
-</div>
+</section>
 <!--Секция экрана с категорией супы-->
-<div class="food_container food_grid" id="food_id">
+<section class="food_section food_grid" id="food_id">
   <div class="food_item">
     <div class="food_image">
       <img src="https://i.postimg.cc/fWKQXRst/500a3512e536162c204f.jpg"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Фо Бо</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Фо Бо</p>
+        <p class="food_v">700мл</p>
+      </div>
+      <p class="food_price_txt">₽ 419</p>
       <p class="food_desc_txt">Говядина, рисовая лапша, мясной бульон, зелень</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>392 ₽</b>.</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn">-</button>
-      <p class="food_counter" id="food_counter_id">1</p>
-      <button class="food_incr_btn" id="food_incr_btn">+</button>
-      <button class="food_btn" id="food_buy_btn">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
   <div class="food_item">
     <div class="food_image">
-      <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
+      <img src="https://i.postimg.cc/nVqCwwLZ/4d5757ebcea0ad5182131b29d3186439.jpg"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Миен Бо</p>
-      <p class="food_desc_txt">Говядина, стеклянная лапша, мясной бульон, зелень</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>392 ₽</b>.</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Миен Бо</p>
+        <p class="food_v">700мл</p>
+      </div>
+      <p class="food_price_txt">₽ 419</p>
+      <p class="food_desc_txt">Говядина, рисовая лапша, мясной бульон, зелень</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_2">-</button>
-      <p class="food_counter" id="food_counter_id_2">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_2">+</button>
-      <button class="food_btn" id="food_buy_btn_2">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
   <div class="food_item">
     <div class="food_image">
-      <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
+      <img src="https://i.postimg.cc/tTWCwYpD/794eb33121901ee70fc217b01bec71c8.jpg"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Бун Бо</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Бун Бо</p>
+        <p class="food_v">700мл</p>
+      </div>
+      <p class="food_price_txt">₽ 419</p>
       <p class="food_desc_txt">Говядина, рисовая лапша(бун), мясной бульон, зелень</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>392 ₽</b>.</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_3">-</button>
-      <p class="food_counter" id="food_counter_id_3">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_3">+</button>
-      <button class="food_btn" id="food_buy_btn_3">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
   <div class="food_item">
     <div class="food_image">
-      <img src="https://i.postimg.cc/fWKQXRst/500a3512e536162c204f.jpg"
+      <img src="https://i.postimg.cc/j5brWvYQ/orig.jpg"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Фо Га</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Фо Га</p>
+        <p class="food_v">700мл</p>
+      </div>
+      <p class="food_price_txt">₽ 419</p>
       <p class="food_desc_txt">Курица, рисовая лапша, мясной бульон, зелень</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>392 ₽</b>.</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_4">-</button>
-      <p class="food_counter" id="food_counter_id_4">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_4">+</button>
-      <button class="food_btn" id="food_buy_btn_4">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
   <div class="food_item">
     <div class="food_image">
-      <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
+      <img src="https://i.postimg.cc/4xHCBjJQ/i.webp"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Фо Шот Ванг</p>
-      <p class="food_desc_txt">Говядина, тушеная говядина, рисовая лапша, мясной бульон, зелень</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>392 ₽</b>.</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Фо Шот Ванг</p>
+        <p class="food_v">700мл</p>
+      </div>
+      <p class="food_price_txt">₽ 480</p>
+      <p class="food_desc_txt">Говядина, тушёная говядина, рисовая лапша, мясной бульон, зелень</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_5">-</button>
-      <p class="food_counter" id="food_counter_id_5">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_5">+</button>
-      <button class="food_btn" id="food_buy_btn_5">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
   <div class="food_item">
     <div class="food_image">
-      <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
+      <img src="https://i.postimg.cc/WzYK7wCy/XXL-height.webp"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Том Ям с рисом</p>
-      <p class="food_desc_txt">Куриный бульон, кокосовое молоко, морепродукты, шампиньоны, рис</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>469 ₽</b>.</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Том Ям</p>
+        <p class="food_v">500мл</p>
+      </div>
+      <p class="food_price_txt">₽ 469</p>
+      <p class="food_desc_txt">Куриный бульон, кокосовое молоко, морепродукты, рис</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_6">-</button>
-      <p class="food_counter" id="food_counter_id_6">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_6">+</button>
-      <button class="food_btn" id="food_buy_btn_6">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
   <div class="food_item">
     <div class="food_image">
-      <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
+      <img src="https://i.postimg.cc/T3MQvsV9/2.webp"
            alt="mixed vegetable salad in a mason jar."/>
     </div>
     <div class="food_txt_container">
-      <p class="food_title_txt">Том Ям с лапшой</p>
-      <p class="food_desc_txt">Куриный бульон, кокосовое молоко, морепродукты, шампиньоны, рисовая лапша</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>469 ₽</b>.</p>
+      <div class="food_title_container">
+        <p class="food_title_txt">Шот Ванг</p>
+        <p class="food_v">400мл</p>
+      </div>
+      <p class="food_price_txt">₽ 409</p>
+      <p class="food_desc_txt">Говядина, мясной бульон, зелень, рисповая лапша</p>
     </div>
     <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_8">-</button>
-      <p class="food_counter" id="food_counter_id_8">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_8">+</button>
-      <button class="food_btn" id="food_buy_btn_8">Добавить в корзину</button>
+      <button class="food_decr_btn">-</button>
+      <p class="food_counter">1</p>
+      <button class="food_incr_btn">+</button>
+      <button class="food_btn">Добавить в корзину</button>
     </div>
   </div>
-  <div class="food_item">
-    <div class="food_image">
-      <img src="https://i.postimg.cc/FHq4RC4T/c6610997fa0b90df8290845976e7c24b-800x800.jpg"
-           alt="mixed vegetable salad in a mason jar."/>
-    </div>
-    <div class="food_txt_container">
-      <p class="food_title_txt">Шот Ванг</p>
-      <p class="food_desc_txt">Говядина, рисовая лапша, мясной бульон, зелень</p>
-      <br>
-      <p class="food_price_txt">💰 Стоимость: <b>392 ₽</b>.</p>
-    </div>
-    <div class="food_item_buttons">
-      <button class="food_decr_btn" id="food_decr_btn_9">-</button>
-      <p class="food_counter" id="food_counter_id_9">1</p>
-      <button class="food_incr_btn" id="food_incr_btn_9">+</button>
-      <button class="food_btn" id="food_buy_btn_9">Добавить в корзину</button>
-    </div>
-  </div>
-</div>
+</section>
 <!--Секция экрана с категорией вторые блюда-->
-<div class="food_container food_grid" id="dishes_id">
+<div class="food_section food_grid" id="dishes_id">
   <div class="food_item">
     <div class="food_image">
       <img src="https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg"
@@ -307,7 +293,7 @@
   </div>
 </div>
 <!--Секция экрана с категорией закусок-->
-<div class="food_container food_grid" id="lunch_id">
+<div class="food_section food_grid" id="lunch_id">
   <div class="food_item">
     <div class="food_image">
       <img src="https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg"
@@ -346,7 +332,7 @@
   </div>
 </div>
 <!--Секция экрана с категорией напитки-->
-<div class="food_container food_grid" id="drinks_id">
+<div class="food_section food_grid" id="drinks_id">
   <div class="food_item">
     <div class="food_image">
       <img src="https://i.postimg.cc/9FQ5BHXx/restoran-vietkafe-nametkina-vietcafe-na-nametkina-fb946-full-197793.jpg"
@@ -385,7 +371,7 @@
   </div>
 </div>
 <!--Секция заказа-->
-<div class="order_container order_grid" id="order_id">
+<div class="order_section order_grid" id="order_id">
   <p class="order_title_txt" id="order_title_id">Ваш заказ:</p>
   <div class=order_result_container id="order_result_container_id">
     <p class="order_result_title_txt">Итого:</p>
@@ -393,6 +379,17 @@
   </div>
   <textarea class="order_comment" id="order_comment_id" placeholder="Добавить комментарий"></textarea>
 </div>
+<!--Скрипты-->
+<script src="js/order/OrderClassBuilder.js"></script>
+<script src="js/order/OrderClass.js"></script>
+<script src="js/dish/DishClassBuilder.js"></script>
+<script src="js/dish/DishClass.js"></script>
+<script src="js/categoryBtnClassHandler/CategoryBtnClassBuilder.js"></script>
+<script src="js/categoryBtnClassHandler/CategoryBtnClass.js"></script>
+<script src="js/addBtnClassHandler/AddBtnClassBuilder.js"></script>
+<script src="js/addBtnClassHandler/AddBtnClass.js"></script>
+<script src="js/screenMode/ScreenModeBuilder.js"></script>
+<script src="js/screenMode/ScreenMode.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
