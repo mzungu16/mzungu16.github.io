@@ -1,5 +1,4 @@
 body {
-  max-width: 480px;
   margin: 0;
   background: white;
   font-family: var(--default-font);
@@ -13,11 +12,10 @@ body {
   width: fit-content;
   display: flex;
   justify-content: center;
-  background: white;
-  margin: 5px;
 }
 
 .category_grid {
+  margin: 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
