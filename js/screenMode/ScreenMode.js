@@ -14,8 +14,9 @@ class ScreenMode {
   }
 
   defaultScreenMode() {
+    console.log("DefaultScreen func")
     this.telegramSetup();
-    this.sectionsSetup(this.categoryContainer.id);
+    // this.sectionsSetup(this.categoryContainer.id);
   }
 
   /*
