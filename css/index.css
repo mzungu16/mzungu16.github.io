@@ -55,7 +55,7 @@ body {
 
 /*Секция блюд*/
 .food_section {
-  max-width: 480px;
+  max-width: 410px;
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -193,7 +193,7 @@ body {
 
 /*Секция заказа*/
 .order_section {
-  max-width: 480px;
+  max-width: 410px;
   width: fit-content;
   display: flex;
   justify-content: center;;
