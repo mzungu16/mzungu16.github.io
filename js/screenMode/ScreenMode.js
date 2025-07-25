@@ -17,7 +17,7 @@ class ScreenMode {
       this.tg.MainButton.text = "Просмотреть корзину";
     }
     var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    console.log("Width - ",width)
+    console.log("Width - ", width);
     this.categoryContainer.style.display = 'grid';
     this.categoryContainer.style.width = width;
     this.soupContainer.style.display = 'none';
