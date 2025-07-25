@@ -62,8 +62,8 @@ class OrderClass {
     orderFoodTitle.textContent = `${orderItem.dishTitle} x${orderItem.dishCount}`;
     orderFoodDesc.textContent = orderItem.dishDesc;
     let priceSplitStr = orderItem.dishPrice.split(" ");
-    let foodItemResult = parseInt(orderItem.dishCount) * parseInt(priceSplitStr[2]);
-    orderFoodPriceTxt.textContent = `${foodItemResult} ₽`;
+    let foodItemResult = parseInt(orderItem.dishCount) * parseInt(priceSplitStr[1]);
+    orderFoodPriceTxt.textContent = `₽ ${foodItemResult}`;
     this.orderResultSumList.push(foodItemResult);
     this.orderComment = this.orderCommentId.textContent;
 

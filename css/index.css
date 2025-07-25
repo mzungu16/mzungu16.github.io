@@ -247,7 +247,7 @@ body {
 .order_food_desc {
   margin: 0;
   font-size: 14px;
-  color: var(--tg-theme-hint-color);
+  color: #555555;
 }
 
 .order_price_container {
@@ -295,8 +295,6 @@ body {
 .order_comment {
   display: flex;
   margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
   background: #EFEFEF;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   text-align: start;
