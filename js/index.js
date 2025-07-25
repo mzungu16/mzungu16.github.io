@@ -1,5 +1,6 @@
 let tg = window.Telegram.WebApp;
 tg.headerColor = "#EFEFEF";
+tg.bottomBarColor = "#EFEFEF";
 console.log(tg.version);
 
 const screenMode = new ScreenModeBuilder()
