@@ -2,25 +2,29 @@ body {
   margin: 0;
   background: white;
   font-family: var(--default-font);
-  touch-action: manipulation;
+
   --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 /*Секция главного экрана категорий*/
-.category_section_grid {
+.category_section {
+  touch-action: manipulation;
+  max-width: 410px;
+  display: flex;
   justify-content: center;
-  max-width: 480px;
+}
+
+.category_grid {
   margin: 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 10px;
   height: auto;
-  width: 100%;
 }
 
 .category_item {
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   text-align: center;
   border-radius: 10px;
@@ -28,24 +32,17 @@ body {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.category_image {
-  width: fit-content;
-  height: fit-content;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-img {
+.category_image img {
   width: 100%;
   height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .category_btn {
   display: inline-block;
-  width: 190px;
+  width: 90%;
   padding: 10px 10px;
   margin: 5px;
   border: none;
