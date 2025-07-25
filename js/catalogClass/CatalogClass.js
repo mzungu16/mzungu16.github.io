@@ -1,4 +1,4 @@
-class AddBtnClass {
+class CatalogClass {
   foodBtnList = document.querySelectorAll(".food_btn");
   decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
   foodContainerList = document.querySelectorAll(".food_counter");
@@ -13,12 +13,28 @@ class AddBtnClass {
   index;
   dishesList = [];
 
-  constructor(telegram, screenMode) {
-    this.tg = telegram;
-    this.screenMode = screenMode;
+  constructor(tg, categoryClass) {
+    this.tg = tg;
+    this.categoryClass = categoryClass;
   }
 
-  onAddBtnClickEvent() {
+  catalogScreenSetup() {
+    this.telegramSetup();
+    this.onBackButtonClick();
+  }
+
+  telegramSetup() {
+    this.tg.expand();
+    this.tg.BackButton.show();
+  }
+
+  onBackButtonClick() {
+    Telegram.WebApp.onEvent('backButtonClicked', () => {
+      this.categoryClass.categoryScreenSetup();
+    });
+  }
+
+  /*onAddBtnClickEvent() {
     this.foodBtnList.forEach((foodBtnElement) => {
       foodBtnElement.addEventListener("click", (event) => {
         this.index = [...this.foodBtnList].indexOf(foodBtnElement);
@@ -128,5 +144,5 @@ class AddBtnClass {
     this.decrFoodBtnList[item.dishPosition].style.display = 'none';
     this.foodContainerList[item.dishPosition].style.display = 'none';
     this.incrFoodBtnList[item.dishPosition].style.display = 'none';
-  }
+  }*/
 }

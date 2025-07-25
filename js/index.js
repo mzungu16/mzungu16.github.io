@@ -2,7 +2,7 @@ let tg = window.Telegram.WebApp;
 console.log(tg.version);
 tg.lockOrientation();
 
-const screenMode = new ScreenModeBuilder()
+const categoryClass = new CategoryClassBuilder()
   .setTg(tg)
   .build();
-screenMode.defaultScreenMode();
+categoryClass.categoryScreenSetup();

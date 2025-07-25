@@ -1,4 +1,4 @@
-class ScreenModeBuilder {
+class CategoryClassBuilder {
 
   setTg(tg) {
     this.tg = tg;
@@ -6,6 +6,6 @@ class ScreenModeBuilder {
   }
 
   build() {
-    return new ScreenMode(this.tg);
+    return new CategoryClass(this.tg);
   }
 }
