@@ -91,7 +91,7 @@ class ScreenMode {
   sectionsSetup(htmlElementId) {
     this.viewList.forEach((item) => {
       console.log(`₽ - section setup || item.id - ${item} || htmlElement.id - ${htmlElementId}`);
-      if (item.id === htmlElementId.id) {
+      if (item === htmlElementId) {
         console.log("₽ - check of item is valid - ", true);
         htmlElementId.style.display = 'grid';
       } else {
