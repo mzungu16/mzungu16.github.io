@@ -6,23 +6,15 @@ class ScreenMode {
   drinksContainer = document.getElementById("drinks_id");
   orderContainer = document.getElementById("order_id");
 
+  viewList = [this.categoryContainer, this.soupContainer, this.dishesContainer, this.lunchContainer, this.dishesContainer, this.orderContainer];
+
   constructor(telegram) {
     this.tg = telegram;
   }
 
   defaultScreenMode() {
-    this.tg.lockOrientation();
-    this.tg.BackButton.hide();
-    if (this.tg.MainButton.isVisible) {
-      console.log(true);
-      this.tg.MainButton.text = "Просмотреть корзину";
-    }
-    this.categoryContainer.style.display = 'grid';
-    this.soupContainer.style.display = 'none';
-    this.dishesContainer.style.display = 'none';
-    this.lunchContainer.style.display = 'none';
-    this.drinksContainer.style.display = 'none';
-    this.orderContainer.style.display = 'none';
+    this.telegramSetup();
+    this.sectionsSetup(this.categoryContainer);
   }
 
   soupsScreenMode() {
@@ -84,5 +76,24 @@ class ScreenMode {
   telegramEditing() {
     this.tg.expand();
     this.tg.BackButton.show();
+  }
+
+  telegramSetup() {
+    this.tg.BackButton.hide();
+    if (this.tg.MainButton.isVisible) {
+      console.log("Telegram setup - ", true);
+      this.tg.MainButton.text = "Просмотреть корзину";
+    }
+  }
+
+  sectionsSetup(htmlElement) {
+    this.viewList.forEach((item) => {
+      if (item === htmlElement) {
+        console.log("Check of item is valid - ", true);
+        htmlElement.style.display = 'grid';
+      } else {
+        htmlElement.style.display = 'none';
+      }
+    });
   }
 }
