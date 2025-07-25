@@ -6,8 +6,8 @@ class ScreenMode {
   drinksContainer = document.getElementById("drinks_id");
   orderContainer = document.getElementById("order_id");
 
-  viewList = [this.categoryContainer, this.soupContainer, this.dishesContainer,
-    this.lunchContainer, this.drinksContainer, this.orderContainer];
+  viewList = [this.categoryContainer.id, this.soupContainer.id, this.dishesContainer.id,
+    this.lunchContainer.id, this.drinksContainer.id, this.orderContainer.id];
 
   constructor(telegram) {
     this.tg = telegram;
@@ -88,14 +88,14 @@ class ScreenMode {
     }
   }
 
-  sectionsSetup(htmlElement) {
+  sectionsSetup(htmlElementId) {
     this.viewList.forEach((item) => {
-      console.log(`₽ - section setup || item.id - ${item.id} || htmlElement.id - ${htmlElement.id}`);
-      if (item.id === htmlElement.id) {
+      console.log(`₽ - section setup || item.id - ${item} || htmlElement.id - ${htmlElementId}`);
+      if (item.id === htmlElementId.id) {
         console.log("₽ - check of item is valid - ", true);
-        htmlElement.style.display = 'grid';
+        htmlElementId.style.display = 'grid';
       } else {
-        htmlElement.style.display = 'none';
+        htmlElementId.style.display = 'none';
       }
     });
   }
