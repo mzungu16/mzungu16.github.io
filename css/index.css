@@ -300,7 +300,8 @@ body {
   text-align: start;
   border: none;
   border-radius: 10px;
-  color: var(--tg-theme-hint-color);
+  color: #555555;
+  padding: 10px;
   font-size: 16px;
   height: 150px;
   resize: none;
