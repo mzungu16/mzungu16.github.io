@@ -20,3 +20,4 @@ buyBtnClass.onDecrBtnClickEvent();
 buyBtnClass.onIncrBtnClickEvent();
 buyBtnClass.onBackButtonClickEvent();
 buyBtnClass.onMainButtonClickEvent();
+buyBtnClass.onBackClick();

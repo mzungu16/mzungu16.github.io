@@ -14,6 +14,7 @@ class ScreenMode {
     this.tg.lockOrientation();
     this.tg.BackButton.hide();
     if (this.tg.MainButton.isVisible) {
+      console.log(true);
       this.tg.MainButton.text = "Просмотреть корзину";
     }
     this.categoryContainer.style.display = 'grid';

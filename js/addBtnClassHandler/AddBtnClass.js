@@ -108,6 +108,10 @@ class AddBtnClass {
     });
   }
 
+  onBackClick(){
+    this.order.onBackButtonClickEvent2();
+  }
+
   onMainButtonClickEvent() {
     Telegram.WebApp.onEvent('mainButtonClicked', () => {
       this.order = new OrderClassBuilder()
@@ -116,8 +120,6 @@ class AddBtnClass {
         .build();
       this.screenMode.orderScreenMode();
       this.order.createElements();
-      this.order.onClosedAlertEvent();
-      this.order.onBackButtonClickEvent2();
     });
   }
 
