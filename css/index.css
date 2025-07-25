@@ -7,20 +7,16 @@ body {
 }
 
 /*Секция главного экрана категорий*/
-.category_section {
-  max-width: 480px;
-  width: fit-content;
-  display: flex;
+.category_section_grid {
   justify-content: center;
-}
-
-.category_grid {
+  max-width: 480px;
   margin: 5px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 10px;
   height: auto;
+  width: fit-content;
 }
 
 .category_item {
