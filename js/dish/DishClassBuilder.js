@@ -4,11 +4,6 @@ class DishClassBuilder {
     return this;
   }
 
-  setElementPos(dishPosition) {
-    this.dishPosition = dishPosition;
-    return this;
-  }
-
   setDishPicture(dishPicture) {
     this.dishPicture = dishPicture
     return this;
@@ -35,6 +30,6 @@ class DishClassBuilder {
   }
 
   build() {
-    return new DishClass(this.dishId, this.dishPosition, this.dishPicture, this.dishTitle, this.dishDesc, this.dishPrice, this.dishCount);
+    return new DishClass(this.dishId, this.dishPicture, this.dishTitle, this.dishDesc, this.dishPrice, this.dishCount);
   }
 }

@@ -1,148 +1,159 @@
 class CatalogClass {
-  foodBtnList = document.querySelectorAll(".food_btn");
-  decrFoodBtnList = document.querySelectorAll(".food_decr_btn");
-  foodContainerList = document.querySelectorAll(".food_counter");
-  incrFoodBtnList = document.querySelectorAll(".food_incr_btn");
-  foodDishPictureList = document.querySelectorAll(".food_image")
-  foodTitleList = document.querySelectorAll(".food_title_txt");
-  foodDescList = document.querySelectorAll(".food_desc_txt");
-  foodPriceList = document.querySelectorAll(".food_price_txt");
-  foodCountList = document.querySelectorAll(".food_counter");
-  order = new OrderClassBuilder().build();
-  dishBuilder = new DishClassBuilder().build();
-  index;
-  dishesList = [];
+    addCardBtnList = document.querySelectorAll(".food_btn");
+    decrementBtnList = document.querySelectorAll(".food_decr_btn");
+    incrementBtnList = document.querySelectorAll(".food_incr_btn");
+    counterList = document.querySelectorAll(".food_counter");
+    cardIndex;
+    dishBuilder = new DishClassBuilder().build();
+    dishesList = [];
+    STATES = {
+        DEFAULT: "default",
+        ADD_CARD: "addCard",
+        DECREASE_CARD: "decrementCard"
+    };
 
-  constructor(tg, categoryClass) {
-    this.tg = tg;
-    this.categoryClass = categoryClass;
-  }
+    itemPictureList = document.querySelectorAll(".food_image")
+    itemTitleList = document.querySelectorAll(".food_title_txt");
+    itemDescList = document.querySelectorAll(".food_desc_txt");
+    itemPriceList = document.querySelectorAll(".food_price_txt");
+    order = new OrderClassBuilder().build();
 
-  catalogScreenSetup() {
-    this.telegramSetup();
-    this.onBackButtonClick();
-  }
-
-  telegramSetup() {
-    this.tg.expand();
-    this.tg.BackButton.show();
-  }
-
-  onBackButtonClick() {
-    Telegram.WebApp.onEvent('backButtonClicked', () => {
-      this.categoryClass.categoryScreenSetup();
-    });
-  }
-
-  /*onAddBtnClickEvent() {
-    this.foodBtnList.forEach((foodBtnElement) => {
-      foodBtnElement.addEventListener("click", (event) => {
-        this.index = [...this.foodBtnList].indexOf(foodBtnElement);
-        this.handleAddBtnClick();
-      })
-    });
-  }
-
-  onDecrBtnClickEvent() {
-    this.decrFoodBtnList.forEach((decrElement) => {
-      decrElement.addEventListener("click", (event) => {
-        this.index = [...this.decrFoodBtnList].indexOf(decrElement);
-        this.handleBtnDecrSubmit();
-      })
-    });
-  }
-
-  onIncrBtnClickEvent() {
-    this.incrFoodBtnList.forEach((incrElement) => {
-      incrElement.addEventListener("click", (event) => {
-        this.index = [...this.incrFoodBtnList].indexOf(incrElement);
-        this.handleBtnIncrSubmit()
-      })
-    });
-  }
-
-  handleAddBtnClick() {
-    this.tg.MainButton.text = "Просмотреть корзину";
-    this.tg.MainButton.color = this.tg.themeParams.button_color;
-    this.tg.MainButton.textColor = this.tg.themeParams.button_text_color;
-    this.tg.MainButton.show();
-
-    this.foodBtnList[this.index].style.display = 'none';
-    this.decrFoodBtnList[this.index].style.display = 'inline-block';
-    this.foodContainerList[this.index].style.display = 'inline-block';
-    this.incrFoodBtnList[this.index].style.display = 'inline-block';
-
-    this.dishBuilder = new DishClassBuilder()
-      .setId(this.index)
-      .setElementPos(this.index)
-      .setDishPicture(this.foodDishPictureList[this.index].getElementsByTagName('img')[0].src)
-      .setTitle(this.foodTitleList[this.index].textContent)
-      .setDescription(this.foodDescList[this.index].textContent)
-      .setPrice(this.foodPriceList[this.index].textContent)
-      .setCount(this.foodCountList[this.index].textContent)
-      .build();
-
-    this.dishesList.push(this.dishBuilder);
-
-    if (this.dishesList.length >= 1) {
-      this.tg.enableClosingConfirmation();
+    constructor(tg, categoryClass) {
+        this.tg = tg;
+        this.categoryClass = categoryClass;
     }
-  }
 
-  handleBtnDecrSubmit() {
-    this.dishesList.forEach((item, indexElement) => {
-      if (this.index === item.dishPosition) {
-        if (this.foodContainerList[item.dishPosition].textContent <= "1") {
-          this.showAddBtn(item);
-          this.dishesList.splice(indexElement, 1);
-          if (this.dishesList.length === 0) {
-            this.tg.MainButton.hide();
-            this.tg.disableClosingConfirmation();
-          }
-        } else {
-          let counter = parseInt(item.dishCount);
-          item.dishCount = counter - 1;
-          this.foodContainerList[item.dishPosition].textContent = item.dishCount;
+    catalogScreenSetup() {
+        this.telegramSetup(this.STATES.DEFAULT);
+        this.onBackButtonClick();
+        this.onAddCardClick();
+        this.onDecrementBtnClick();
+        this.onIncrementBtnClick();
+    }
+
+    telegramSetup(state) {
+        switch (state) {
+            case "default":
+                console.log("₽ DEFAULT");
+                this.tg.expand();
+                this.tg.BackButton.show();
+                break;
+            case "addCard":
+                console.log("₽ ADD_CARD");
+                this.tg.MainButton.text = "Просмотреть корзину";
+                this.tg.MainButton.color = this.tg.themeParams.button_color;
+                this.tg.MainButton.textColor = this.tg.themeParams.button_text_color;
+                this.tg.MainButton.show();
+                this.dishesList.length >= 1 ? this.tg.enableClosingConfirmation() : null;
+                break;
+            case "decrementCard":
+                console.log("₽ DECREASE_CARD");
+                this.tg.MainButton.hide();
+                this.tg.disableClosingConfirmation();
+                break;
         }
-      }
-    });
-  }
+    }
 
-  handleBtnIncrSubmit() {
-    this.dishesList.forEach((item) => {
-      if (this.index === item.dishPosition) {
-        let counter = parseInt(item.dishCount);
-        item.dishCount = counter + 1;
-        this.foodContainerList[item.dishPosition].textContent = item.dishCount;
-      }
-    });
-  }
+    onBackButtonClick() {
+        Telegram.WebApp.onEvent('backButtonClicked', () => {
+            this.categoryClass.categoryScreenSetup();
+        });
+    }
 
-  onBackButtonClickEvent() {
-    Telegram.WebApp.onEvent('backButtonClicked', () => {
-      this.screenMode.defaultScreenMode();
-    });
-  }
+    onAddCardClick() {
+        this.addCardBtnList.forEach(addBtn => {
+            addBtn.onclick = () => {
+                this.cardIndex = [...this.addCardBtnList].indexOf(addBtn);
+                this.telegramSetup(this.STATES.ADD_CARD);
+                this.removeAddCardBtn(this.cardIndex);
+                this.addDishItemToList(this.cardIndex);
+            }
+        });
+    }
 
-  onBackClick(){
-    this.order.onBackButtonClickEvent2();
-  }
+    onDecrementBtnClick() {
+        this.decrementBtnList.forEach(decrementBtn => {
+            decrementBtn.onclick = () => {
+                this.cardIndex = [...this.decrementBtnList].indexOf(decrementBtn);
+                this.decrementDishItem(this.cardIndex);
+            }
+        });
+    }
 
-  onMainButtonClickEvent() {
-    Telegram.WebApp.onEvent('mainButtonClicked', () => {
-      this.order = new OrderClassBuilder()
-        .setTg(this.tg)
-        .setOrderDishes(this.dishesList)
-        .build();
-      this.screenMode.orderScreenMode();
-      this.order.createElements();
-    });
-  }
+    onIncrementBtnClick() {
+        this.incrementBtnList.forEach(incrementBtn => {
+            incrementBtn.onclick = () => {
+                this.cardIndex = [...this.incrementBtnList].indexOf(incrementBtn);
+                this.incrementDishItem(this.cardIndex);
+            }
+        });
+    }
 
-  showAddBtn(item) {
-    this.foodBtnList[item.dishPosition].style.display = 'inline-block';
-    this.decrFoodBtnList[item.dishPosition].style.display = 'none';
-    this.foodContainerList[item.dishPosition].style.display = 'none';
-    this.incrFoodBtnList[item.dishPosition].style.display = 'none';
-  }*/
+    removeAddCardBtn(index) {
+        this.addCardBtnList[index].style.display = "none";
+        this.decrementBtnList[index].style.display = "inline-block";
+        this.incrementBtnList[index].style.display = "inline-block";
+        this.counterList[index].style.display = "inline-block";
+    }
+
+    addAddCardBtn(index) {
+        this.addCardBtnList[index].style.display = "inline-block";
+        this.decrementBtnList[index].style.display = "none";
+        this.incrementBtnList[index].style.display = "none";
+        this.counterList[index].style.display = "none";
+    }
+
+    addDishItemToList(index) {
+        this.dishBuilder = new DishClassBuilder()
+            .setId(index)
+            .setDishPicture(this.itemPictureList[index].getElementsByTagName('img')[0].src)
+            .setTitle(this.itemTitleList[index].textContent)
+            .setDescription(this.itemDescList[index].textContent)
+            .setPrice(this.itemPriceList[index].textContent)
+            .setCount(this.counterList[index].textContent)
+            .build();
+        this.dishesList.push(this.dishBuilder);
+        console.log("₽ local list is - ", this.dishesList);
+    }
+
+    decrementDishItem(index) {
+        this.dishesList.forEach((dish, indexElement) => {
+            if (dish.dishId === index) {
+                console.log(`₽ decr || dish id is - ${dish.dishId} || index - ${index} `);
+                if (this.counterList[index].textContent <= "1") {
+                    this.addAddCardBtn(index);
+                    this.dishesList.splice(indexElement, 1);
+                    this.dishesList.length === 0 ? this.telegramSetup(this.STATES.DECREASE_CARD) : null;
+                } else {
+                    let counter = parseInt(dish.dishCount);
+                    dish.dishCount = counter - 1;
+                    this.counterList[dish.dishId].textContent = dish.dishCount;
+                }
+            }
+        })
+    }
+
+    incrementDishItem(index) {
+        this.dishesList.forEach(dish => {
+            if (dish.dishId === index) {
+                console.log(`₽ incr || dish id is - ${dish.dishId} || index - ${index} `);
+                let counter = parseInt(dish.dishCount);
+                dish.dishCount = counter + 1;
+                this.counterList[dish.dishId].textContent = dish.dishCount;
+            }
+        });
+    }
+
+    /*onAddBtnClickEvent() {
+
+    onMainButtonClickEvent() {
+      Telegram.WebApp.onEvent('mainButtonClicked', () => {
+        this.order = new OrderClassBuilder()
+          .setTg(this.tg)
+          .setOrderDishes(this.dishesList)
+          .build();
+        this.screenMode.orderScreenMode();
+        this.order.createElements();
+      });
+    }*/
 }
