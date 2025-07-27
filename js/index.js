@@ -1,8 +1,8 @@
-let tg = window.Telegram.WebApp;
+window.tg = window.Telegram.WebApp;
 console.log(tg.version);
 tg.lockOrientation();
 
-const categoryClass = new CategoryClassBuilder()
-  .setTg(tg)
-  .build();
+window.dishesList = [];
+
+const categoryClass = new CategoryClass();
 categoryClass.categoryScreenSetup();

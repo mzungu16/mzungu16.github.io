@@ -5,7 +5,6 @@ class CatalogClass {
     counterList = document.querySelectorAll(".food_counter");
     cardIndex;
     dishBuilder = new DishClassBuilder().build();
-    dishesList = [];
     STATES = {
         DEFAULT: "default",
         ADD_CARD: "addCard",
@@ -44,7 +43,7 @@ class CatalogClass {
                 this.tg.MainButton.color = this.tg.themeParams.button_color;
                 this.tg.MainButton.textColor = this.tg.themeParams.button_text_color;
                 this.tg.MainButton.show();
-                this.dishesList.length >= 1 ? this.tg.enableClosingConfirmation() : null;
+                dishesList.length >= 1 ? this.tg.enableClosingConfirmation() : null;
                 break;
             case "decrementCard":
                 console.log("₽ DECREASE_CARD");
@@ -112,18 +111,18 @@ class CatalogClass {
             .setPrice(this.itemPriceList[index].textContent)
             .setCount(this.counterList[index].textContent)
             .build();
-        this.dishesList.push(this.dishBuilder);
-        console.log("₽ local list is - ", this.dishesList);
+        dishesList.push(this.dishBuilder);
+        console.log("₽ local list is - ", dishesList);
     }
 
     decrementDishItem(index) {
-        this.dishesList.forEach((dish, indexElement) => {
+        dishesList.forEach((dish, indexElement) => {
             if (dish.dishId === index) {
                 console.log(`₽ decr || dish id is - ${dish.dishId} || index - ${index} `);
                 if (this.counterList[index].textContent <= "1") {
                     this.addAddCardBtn(index);
-                    this.dishesList.splice(indexElement, 1);
-                    this.dishesList.length === 0 ? this.telegramSetup(this.STATES.DECREASE_CARD) : null;
+                    dishesList.splice(indexElement, 1);
+                    dishesList.length === 0 ? this.telegramSetup(this.STATES.DECREASE_CARD) : null;
                 } else {
                     let counter = parseInt(dish.dishCount);
                     dish.dishCount = counter - 1;
@@ -134,7 +133,7 @@ class CatalogClass {
     }
 
     incrementDishItem(index) {
-        this.dishesList.forEach(dish => {
+        dishesList.forEach(dish => {
             if (dish.dishId === index) {
                 console.log(`₽ incr || dish id is - ${dish.dishId} || index - ${index} `);
                 let counter = parseInt(dish.dishCount);
