@@ -19,6 +19,10 @@ class OrderClass {
         this.onOrderBackButtonClick();
     }
 
+    clearOrderDishList() {
+        this.orderDishList.slice(0, this.orderDishList.length);
+    }
+
     orderTgSetup() {
         tg.MainButton.text = "Оплатить";
     }
