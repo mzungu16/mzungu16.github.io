@@ -55,6 +55,7 @@ class CatalogClass {
 
     onCatalogBackButtonClick() {
         Telegram.WebApp.onEvent('backButtonClicked', () => {
+            console.log("P - Catalog > backButton");
             this.categoryClass.categoryScreenSetup();
         });
     }
