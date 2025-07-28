@@ -1,11 +1,11 @@
-class CategoryClass {
-    sectionList = document.querySelectorAll("section");
+window.sectionList = document.querySelectorAll("section");
 
+class CategoryClass {
     categoryBtnList = document.querySelectorAll(".category_btn");
 
     categoryScreenSetup() {
         this.telegramSetup();
-        this.sectionsSetup(this.sectionList[0]);
+        this.sectionsSetup(sectionList[0]);
         this.onCategoryClick();
     }
 
@@ -20,7 +20,6 @@ class CategoryClass {
     openClickedSection(categoryTxt) {
         console.log(`₽ button ${categoryTxt} is clicked`);
         let catalogClass = new CatalogClassBuilder()
-            .setTg(tg)
             .setCategoryClass(this)
             .build();
 
@@ -28,16 +27,16 @@ class CategoryClass {
 
         switch (categoryTxt) {
             case "супы":
-                this.sectionsSetup(this.sectionList[1]);
+                this.sectionsSetup(sectionList[1]);
                 break;
             case "вторые блюда":
-                this.sectionsSetup(this.sectionList[2]);
+                this.sectionsSetup(sectionList[2]);
                 break;
             case "закуски":
-                this.sectionsSetup(this.sectionList[3]);
+                this.sectionsSetup(sectionList[3]);
                 break;
             case "напитки":
-                this.sectionsSetup(this.sectionList[4]);
+                this.sectionsSetup(sectionList[4]);
                 break;
         }
     }
@@ -51,7 +50,7 @@ class CategoryClass {
     }
 
     sectionsSetup(htmlElement) {
-        this.sectionList.forEach((item) => {
+        sectionList.forEach((item) => {
             item.id === htmlElement.id ? item.style.display = "grid" : item.style.display = "none";
         });
     }

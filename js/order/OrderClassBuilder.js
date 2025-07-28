@@ -1,20 +1,16 @@
 class OrderClassBuilder {
-  setTg(tg) {
-    this.tg = tg;
-    return this;
-  }
 
-  setOrderDishes(dishesList) {
-    this.dishesList = dishesList;
-    return this;
-  }
+    setCategoryClass(categoryClass) {
+        this.categoryClass = categoryClass;
+        return this;
+    }
 
-  setOrderComment(orderComment) {
-    this.orderComment = orderComment;
-    return this;
-  }
+    setOrderDishList(orderDishList) {
+        this.orderDishList = orderDishList;
+        return this;
+    }
 
-  build() {
-    return new OrderClass(this.tg, this.dishesList, this.orderComment);
-  }
+    build() {
+        return new OrderClass(this.categoryClass, this.orderDishList);
+    }
 }

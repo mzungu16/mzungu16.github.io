@@ -15,10 +15,8 @@ class CatalogClass {
     itemTitleList = document.querySelectorAll(".food_title_txt");
     itemDescList = document.querySelectorAll(".food_desc_txt");
     itemPriceList = document.querySelectorAll(".food_price_txt");
-    order = new OrderClassBuilder().build();
 
-    constructor(tg, categoryClass) {
-        this.tg = tg;
+    constructor(categoryClass) {
         this.categoryClass = categoryClass;
     }
 
@@ -28,27 +26,28 @@ class CatalogClass {
         this.onAddCardClick();
         this.onDecrementBtnClick();
         this.onIncrementBtnClick();
+        this.onMainBtnClick();
     }
 
     telegramSetup(state) {
         switch (state) {
             case "default":
                 console.log("₽ DEFAULT");
-                this.tg.expand();
-                this.tg.BackButton.show();
+                tg.expand();
+                tg.BackButton.show();
                 break;
             case "addCard":
                 console.log("₽ ADD_CARD");
-                this.tg.MainButton.text = "Просмотреть корзину";
-                this.tg.MainButton.color = this.tg.themeParams.button_color;
-                this.tg.MainButton.textColor = this.tg.themeParams.button_text_color;
-                this.tg.MainButton.show();
-                dishesList.length >= 1 ? this.tg.enableClosingConfirmation() : null;
+                tg.MainButton.text = "Просмотреть корзину";
+                tg.MainButton.color = tg.themeParams.button_color;
+                tg.MainButton.textColor = tg.themeParams.button_text_color;
+                tg.MainButton.show();
+                dishesList.length >= 1 ? tg.enableClosingConfirmation() : null;
                 break;
             case "decrementCard":
                 console.log("₽ DECREASE_CARD");
-                this.tg.MainButton.hide();
-                this.tg.disableClosingConfirmation();
+                tg.MainButton.hide();
+                tg.disableClosingConfirmation();
                 break;
         }
     }
@@ -143,16 +142,13 @@ class CatalogClass {
         });
     }
 
-    /*onAddBtnClickEvent() {
-
-    onMainButtonClickEvent() {
-      Telegram.WebApp.onEvent('mainButtonClicked', () => {
-        this.order = new OrderClassBuilder()
-          .setTg(this.tg)
-          .setOrderDishes(this.dishesList)
-          .build();
-        this.screenMode.orderScreenMode();
-        this.order.createElements();
-      });
-    }*/
+    onMainBtnClick() {
+        Telegram.WebApp.onEvent('mainButtonClicked', () => {
+            const order = new OrderClassBuilder()
+                .setCategoryClass(this.categoryClass)
+                .setOrderDishList(dishesList)
+                .build();
+            order.orderScreenSetup();
+        });
+    }
 }
