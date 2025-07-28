@@ -1,6 +1,7 @@
 window.sectionList = document.querySelectorAll("section");
 
 class CategoryClass {
+
     categoryBtnList = document.querySelectorAll(".category_btn");
     catalogClass = new CatalogClassBuilder()
         .setCategoryClass(this)
