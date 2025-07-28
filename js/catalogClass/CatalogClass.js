@@ -10,7 +10,7 @@ class CatalogClass {
         ADD_CARD: "addCard",
         DECREASE_CARD: "decrementCard"
     };
-
+    order = new OrderClassBuilder().build();
     itemPictureList = document.querySelectorAll(".food_image")
     itemTitleList = document.querySelectorAll(".food_title_txt");
     itemDescList = document.querySelectorAll(".food_desc_txt");
@@ -112,7 +112,7 @@ class CatalogClass {
             .build();
         dishesList.push(this.dishBuilder);
         console.log("₽ local list is - ", dishesList);
-        const order = new OrderClassBuilder()
+        this.order = new OrderClassBuilder()
             .setCategoryClass(this.categoryClass)
             .setOrderDishList(dishesList)
             .build();
@@ -148,7 +148,7 @@ class CatalogClass {
 
     onMainBtnClick() {
         Telegram.WebApp.onEvent('mainButtonClicked', () => {
-            order.orderScreenSetup();
+            this.order.orderScreenSetup();
         });
     }
 }
