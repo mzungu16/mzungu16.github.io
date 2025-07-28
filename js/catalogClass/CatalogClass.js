@@ -152,7 +152,7 @@ class CatalogClass {
                 .setOrderDishList(dishesList)
                 .build();
             this.order.orderScreenSetup();
-            tg.BackButton.hide();
+            // tg.BackButton.hide();
         });
     }
 }
