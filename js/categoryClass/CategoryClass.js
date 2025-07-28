@@ -14,9 +14,9 @@ class CategoryClass {
     }
 
     onCategoryClick() {
-        console.log("P -> onCategoryClick");
         this.categoryBtnList.forEach((categoryBtnElement) => {
             categoryBtnElement.addEventListener("click", (event) => {
+                console.log("P -> onCategoryClick");
                 this.openClickedSection(event.target.textContent.toLowerCase());
             })
         });
