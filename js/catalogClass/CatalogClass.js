@@ -58,6 +58,7 @@ class CatalogClass {
             console.log("P - Catalog > back button clicked");
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
+            tg.offClick();
         });
     }
 
