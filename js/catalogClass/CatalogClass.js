@@ -113,10 +113,6 @@ class CatalogClass {
             .build();
         dishesList.push(this.dishBuilder);
         console.log("₽ local list is - ", dishesList);
-        this.order = new OrderClassBuilder()
-            .setCategoryClass(this.categoryClass)
-            .setOrderDishList(dishesList)
-            .build();
     }
 
     decrementDishItem(index) {
@@ -149,6 +145,10 @@ class CatalogClass {
 
     onMainBtnClick() {
         Telegram.WebApp.onEvent('mainButtonClicked', () => {
+            this.order = new OrderClassBuilder()
+                .setCategoryClass(this.categoryClass)
+                .setOrderDishList(dishesList)
+                .build();
             this.order.orderScreenSetup();
         });
     }
