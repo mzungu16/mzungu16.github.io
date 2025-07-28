@@ -113,7 +113,6 @@ class CatalogClass {
             .build();
         dishesList.push(this.dishBuilder);
         console.log("₽ local list is - ", dishesList);
-        this.order.clearOrderDishList();
         this.order = new OrderClassBuilder()
             .setCategoryClass(this.categoryClass)
             .setOrderDishList(dishesList)

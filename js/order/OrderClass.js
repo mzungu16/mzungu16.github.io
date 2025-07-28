@@ -19,10 +19,6 @@ class OrderClass {
         this.onOrderBackButtonClick();
     }
 
-    clearOrderDishList() {
-        this.orderDishList.slice(0, this.orderDishList.length);
-    }
-
     orderTgSetup() {
         tg.MainButton.text = "Оплатить";
     }
@@ -34,6 +30,7 @@ class OrderClass {
                 item.remove();
             });
             this.itemList.slice(0, this.itemList.length);
+            this.orderDishList.slice(0, this.orderDishList.length);
             this.categoryClass.categoryScreenSetup();
         });
     }
