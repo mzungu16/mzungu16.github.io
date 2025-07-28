@@ -21,8 +21,9 @@ class CatalogClass {
     }
 
     catalogScreenSetup() {
+        console.log("₽ local list is - ", dishesList);
         this.catalogTgSetup(this.STATES.DEFAULT);
-        this.onBackButtonClick();
+        this.onCatalogBackButtonClick();
         this.onAddCardClick();
         this.onDecrementBtnClick();
         this.onIncrementBtnClick();
@@ -52,7 +53,7 @@ class CatalogClass {
         }
     }
 
-    onBackButtonClick() {
+    onCatalogBackButtonClick() {
         Telegram.WebApp.onEvent('backButtonClicked', () => {
             this.categoryClass.categoryScreenSetup();
         });
@@ -112,6 +113,7 @@ class CatalogClass {
             .build();
         dishesList.push(this.dishBuilder);
         console.log("₽ local list is - ", dishesList);
+        this.order.orderDishList.slice(0, this.order.orderDishList.length);
         this.order = new OrderClassBuilder()
             .setCategoryClass(this.categoryClass)
             .setOrderDishList(dishesList)

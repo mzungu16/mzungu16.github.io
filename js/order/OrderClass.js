@@ -16,14 +16,14 @@ class OrderClass {
         this.categoryClass.sectionsSetup(sectionList[5]);
         this.orderTgSetup()
         this.createElements();
-        this.onBackButtonClick();
+        this.onOrderBackButtonClick();
     }
 
     orderTgSetup() {
         tg.MainButton.text = "Оплатить";
     }
 
-    onBackButtonClick() {
+    onOrderBackButtonClick() {
         console.log("P - Order > backButton");
         Telegram.WebApp.onEvent('backButtonClicked', () => {
             this.itemList.forEach((item) => {
