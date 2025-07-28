@@ -54,10 +54,11 @@ class CatalogClass {
     }
 
     onCatalogBackButtonClick() {
-        Telegram.WebApp.onEvent('backButtonClicked', () => {
-            console.log("P - Catalog > backButton");
+        tg.BackButton.onClick(() => {
+            console.log("P - Catalog > back button clicked");
             this.categoryClass.categoryScreenSetup();
         });
+        tg.BackButton.hide();
     }
 
     onAddCardClick() {
@@ -145,12 +146,13 @@ class CatalogClass {
     }
 
     onMainBtnClick() {
-        Telegram.WebApp.onEvent('mainButtonClicked', () => {
+        tg.MainButton.onClick(() => {
             this.order = new OrderClassBuilder()
                 .setCategoryClass(this.categoryClass)
                 .setOrderDishList(dishesList)
                 .build();
             this.order.orderScreenSetup();
         });
+        tg.BackButton.hide();
     }
 }

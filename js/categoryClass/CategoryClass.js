@@ -41,8 +41,7 @@ class CategoryClass {
     }
 
     telegramSetup() {
-        console.log("₽ - telegram setup - ", true);
-        tg.BackButton.hide();
+        console.log("₽ - Category tg setup - ", true);
         if (tg.MainButton.isVisible) {
             tg.MainButton.text = "Просмотреть корзину";
         }

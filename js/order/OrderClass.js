@@ -20,11 +20,12 @@ class OrderClass {
     }
 
     orderTgSetup() {
+        tg.BackButton.show();
         tg.MainButton.text = "Оплатить";
     }
 
     onOrderBackButtonClick() {
-        Telegram.WebApp.onEvent('backButtonClicked', () => {
+        tg.BackButton.onClick(() => {
             console.log("P - Order > backButton");
             this.itemList.forEach((item) => {
                 item.remove();
