@@ -34,6 +34,7 @@ class OrderClass {
             this.orderDishList.splice(0, this.orderDishList.length);
             console.log(`P order list length - ${this.orderDishList.length}`);
             this.categoryClass.categoryScreenSetup();
+            tg.BackButton.hide();
         });
     }
 

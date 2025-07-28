@@ -57,8 +57,8 @@ class CatalogClass {
         tg.BackButton.onClick(() => {
             console.log("P - Catalog > back button clicked");
             this.categoryClass.categoryScreenSetup();
+            tg.BackButton.hide();
         });
-        tg.BackButton.hide();
     }
 
     onAddCardClick() {
