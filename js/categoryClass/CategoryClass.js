@@ -15,15 +15,14 @@ class CategoryClass {
 
     onCategoryClick() {
         this.categoryBtnList.forEach((categoryBtnElement) => {
-            categoryBtnElement.addEventListener("click", (event) => {
-                console.log("P -> onCategoryClick");
-                this.openClickedSection(event.target.textContent.toLowerCase());
-            })
+            categoryBtnElement.onclick = () => {
+                console.log(`₽ button ${categoryBtnElement.textContent.toLowerCase()} is clicked`);
+                this.openClickedSection(categoryBtnElement.textContent.toLowerCase());
+            }
         });
     }
 
     openClickedSection(categoryTxt) {
-        console.log(`₽ button ${categoryTxt} is clicked`);
         switch (categoryTxt) {
             case "супы":
                 this.sectionsSetup(sectionList[1]);
