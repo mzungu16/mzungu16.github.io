@@ -24,6 +24,7 @@ class OrderClass {
     }
 
     onBackButtonClick() {
+        console.log("P - Order > backButton");
         Telegram.WebApp.onEvent('backButtonClicked', () => {
             this.itemList.forEach((item) => {
                 item.remove();

@@ -2,6 +2,9 @@ window.sectionList = document.querySelectorAll("section");
 
 class CategoryClass {
     categoryBtnList = document.querySelectorAll(".category_btn");
+    catalogClass = new CatalogClassBuilder()
+        .setCategoryClass(this)
+        .build();
 
     categoryScreenSetup() {
         this.telegramSetup();
@@ -19,24 +22,23 @@ class CategoryClass {
 
     openClickedSection(categoryTxt) {
         console.log(`₽ button ${categoryTxt} is clicked`);
-        let catalogClass = new CatalogClassBuilder()
-            .setCategoryClass(this)
-            .build();
-
-        catalogClass.catalogScreenSetup();
 
         switch (categoryTxt) {
             case "супы":
                 this.sectionsSetup(sectionList[1]);
+                this.catalogClass.catalogScreenSetup();
                 break;
             case "вторые блюда":
                 this.sectionsSetup(sectionList[2]);
+                this.catalogClass.catalogScreenSetup();
                 break;
             case "закуски":
                 this.sectionsSetup(sectionList[3]);
+                this.catalogClass.catalogScreenSetup();
                 break;
             case "напитки":
                 this.sectionsSetup(sectionList[4]);
+                this.catalogClass.catalogScreenSetup();
                 break;
         }
     }
