@@ -14,12 +14,12 @@ class OrderClass {
 
     orderScreenSetup() {
         this.categoryClass.sectionsSetup(sectionList[5]);
-        this.telegramSetup()
+        this.orderTgSetup()
         this.createElements();
         this.onBackButtonClick();
     }
 
-    telegramSetup() {
+    orderTgSetup() {
         tg.MainButton.text = "Оплатить";
     }
 

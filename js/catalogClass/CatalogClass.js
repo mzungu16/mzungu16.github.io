@@ -21,7 +21,7 @@ class CatalogClass {
     }
 
     catalogScreenSetup() {
-        this.telegramSetup(this.STATES.DEFAULT);
+        this.catalogTgSetup(this.STATES.DEFAULT);
         this.onBackButtonClick();
         this.onAddCardClick();
         this.onDecrementBtnClick();
@@ -29,7 +29,7 @@ class CatalogClass {
         this.onMainBtnClick();
     }
 
-    telegramSetup(state) {
+    catalogTgSetup(state) {
         switch (state) {
             case "default":
                 console.log("₽ DEFAULT");
@@ -62,7 +62,7 @@ class CatalogClass {
         this.addCardBtnList.forEach(addBtn => {
             addBtn.onclick = () => {
                 this.cardIndex = [...this.addCardBtnList].indexOf(addBtn);
-                this.telegramSetup(this.STATES.ADD_CARD);
+                this.catalogTgSetup(this.STATES.ADD_CARD);
                 this.removeAddCardBtn(this.cardIndex);
                 this.addDishItemToList(this.cardIndex);
             }
@@ -125,7 +125,7 @@ class CatalogClass {
                 if (this.counterList[index].textContent <= "1") {
                     this.addAddCardBtn(index);
                     dishesList.splice(indexElement, 1);
-                    dishesList.length === 0 ? this.telegramSetup(this.STATES.DECREASE_CARD) : null;
+                    dishesList.length === 0 ? this.catalogTgSetup(this.STATES.DECREASE_CARD) : null;
                 } else {
                     let counter = parseInt(dish.dishCount);
                     dish.dishCount = counter - 1;
