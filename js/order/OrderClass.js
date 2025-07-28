@@ -30,7 +30,7 @@ class OrderClass {
                 item.remove();
             });
             this.itemList.slice(0, this.itemList.length);
-            this.orderDishList.slice(0, this.orderDishList.length);
+            this.orderDishList.splice(0, this.orderDishList.length);
             console.log(`P order list length - ${this.orderDishList.length}`);
             this.categoryClass.categoryScreenSetup();
         });
