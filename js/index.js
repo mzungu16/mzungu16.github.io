@@ -1,9 +1,6 @@
-window.tg = window.Telegram.WebApp;
-console.log(tg.version);
-tg.lockOrientation();
+// index.js (your main module)
+import {initializeWebApp} from './webApp.js';
 
-window.dishesList = [];
-console.log(`Launch time`);
-
-const categoryClass = new CategoryClass();
-categoryClass.categoryScreenSetup();
+document.addEventListener('DOMContentLoaded', () => {
+    initializeWebApp();
+});

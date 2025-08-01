@@ -1,4 +1,10 @@
-class CatalogClass {
+function startWork() {
+    console.log("Catalog section started");
+}
+
+export {startWork};
+
+/*class CatalogClass {
     addCardBtnList = document.querySelectorAll(".food_btn");
     decrementBtnList = document.querySelectorAll(".food_decr_btn");
     incrementBtnList = document.querySelectorAll(".food_incr_btn");
@@ -58,7 +64,7 @@ class CatalogClass {
             console.log("P - Catalog > back button clicked");
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
-            tg.offClick();
+
         });
     }
 
@@ -153,7 +159,10 @@ class CatalogClass {
                 .setOrderDishList(dishesList)
                 .build();
             this.order.orderScreenSetup();
+            tg.BackButton.offClick(()=>{
+                console.log("P - Canceled back click");
+            });
             // tg.BackButton.hide();
         });
     }
-}
+}*/
