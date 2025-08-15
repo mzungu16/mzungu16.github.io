@@ -13,6 +13,11 @@ class OrderClass {
     }
 
     orderScreenSetup() {
+        categorySection.style.display = "none";
+        soupsSection.style.display = "none";
+        dishSection.style.display = "none";
+        lunchSection.style.display = "none";
+        drinksSection.style.display = "none";
         orderSection.style.display = "grid";
         this.orderTgSetup()
         this.createElements();
