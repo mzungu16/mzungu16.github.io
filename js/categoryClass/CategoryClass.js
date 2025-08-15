@@ -40,44 +40,44 @@ class CategoryClass {
                 if (!isSoupActive) {
                     this.soupsSection.style.display = "grid";
                     isSoupActive = true;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡡";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
                     this.soupsSection.style.display = "none";
                     isSoupActive = false;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡣";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
             case 1:
                 if (!isDishActive) {
                     this.dishSection.style.display = "grid";
                     isDishActive = true;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡡";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
                     this.dishSection.style.display = "none";
                     isDishActive = false;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡣";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
             case 2:
                 if (!isLunchActive) {
                     this.lunchSection.style.display = "grid";
                     isLunchActive = true;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡡";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
                     this.lunchSection.style.display = "none";
                     isLunchActive = false;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡣";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
             case 3:
                 if (!isDrinksActive) {
                     this.drinksSection.style.display = "grid";
                     isDrinksActive = true;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡡";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
                     this.drinksSection.style.display = "none";
                     isDrinksActive = false;
-                    this.categoryBtnList[categoryBtnElement].textContent = "🡣";
+                    this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
         }

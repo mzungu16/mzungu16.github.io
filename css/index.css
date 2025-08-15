@@ -43,6 +43,10 @@ body {
     align-items: center;
 }
 
+.category_title {
+    color: var(--tg-theme-text-color);
+}
+
 .category_btn {
     border-radius: 50px;
     right: 15px;
