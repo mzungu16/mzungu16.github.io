@@ -1,0 +1,117 @@
+/*Секция заказа*/
+.order_section {
+    touch-action: manipulation;
+    max-width: var(--max-width-value);
+    display: flex;
+    justify-content: center;
+}
+
+.order_grid {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+}
+
+.order_title_txt {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--tg-theme-text-color);
+    text-align: start;
+}
+
+.order_food_item {
+    margin-top: 10px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    background: var(--tg-theme-section-bg-color);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.order_image img {
+    width: 100px;
+    height: 100px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    object-fit: cover;
+}
+
+.order_food_txt_container {
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.order_food_title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--tg-theme-text-color);
+}
+
+.order_food_desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--tg-theme-hint-color);
+}
+
+.order_price_container {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+.order_price_txt {
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 5px;
+    font-weight: bold;
+    text-align: end;
+    color: var(--tg-theme-text-color);
+}
+
+.order_result_container {
+    margin-top: 10px;
+    display: flex;
+}
+
+.order_result_title_txt {
+    margin: 0;
+    display: inline-block;
+    font-size: 20px;
+    width: 50%;
+    font-weight: bold;
+    color: var(--tg-theme-text-color);
+    text-align: start;
+}
+
+.order_result_txt {
+    display: inline-block;
+    margin: 0;
+    width: 50%;
+    text-align: end;
+    font-size: 14px;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--tg-theme-text-color);
+}
+
+.order_comment {
+    display: flex;
+    margin-top: 10px;
+    background: var(--tg-theme-section-bg-color);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    text-align: start;
+    border: none;
+    border-radius: 10px;
+    color: var(--tg-theme-text-color);
+    padding: 10px;
+    font-size: 16px;
+    height: 150px;
+    resize: none;
+}
