@@ -81,6 +81,7 @@ class CategoryClass {
                 }
                 break;
         }
+        this.catalogClass.catalogScreenSetup();
     }
 
     telegramSetup() {

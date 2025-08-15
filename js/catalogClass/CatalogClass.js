@@ -23,7 +23,6 @@ class CatalogClass {
     catalogScreenSetup() {
         console.log("₽ local list is - ", dishesList);
         this.catalogTgSetup(this.STATES.DEFAULT);
-        this.onCatalogBackButtonClick();
         this.onAddCardClick();
         this.onDecrementBtnClick();
         this.onIncrementBtnClick();
@@ -35,7 +34,6 @@ class CatalogClass {
             case "default":
                 console.log("₽ DEFAULT");
                 tg.expand();
-                tg.BackButton.show();
                 break;
             case "addCard":
                 console.log("₽ ADD_CARD");
@@ -53,18 +51,10 @@ class CatalogClass {
         }
     }
 
-    onCatalogBackButtonClick() {
-        tg.BackButton.onClick(() => {
-            console.log("P - Catalog > back button clicked");
-            this.categoryClass.categoryScreenSetup();
-            tg.BackButton.hide();
-            tg.offClick();
-        });
-    }
-
     onAddCardClick() {
         this.addCardBtnList.forEach(addBtn => {
             addBtn.onclick = () => {
+                console.log("Добавить в корзину clicked");
                 this.cardIndex = [...this.addCardBtnList].indexOf(addBtn);
                 this.catalogTgSetup(this.STATES.ADD_CARD);
                 this.removeAddCardBtn(this.cardIndex);
@@ -153,7 +143,6 @@ class CatalogClass {
                 .setOrderDishList(dishesList)
                 .build();
             this.order.orderScreenSetup();
-            // tg.BackButton.hide();
         });
     }
 }
