@@ -1,27 +1,25 @@
 let isSoupActive, isDishActive, isLunchActive, isDrinksActive = false;
+window.categorySection = document.getElementById("category_id");
+window.soupsSection = document.getElementById("soups_id");
+window.dishSection = document.getElementById("dishes_id");
+window.lunchSection = document.getElementById("lunch_id");
+window.drinksSection = document.getElementById("drinks_id");
+window.orderSection = document.getElementById("order_id");
 
 class CategoryClass {
-
     categoryBtnList = document.querySelectorAll(".category_btn");
-    categorySection = document.getElementById("category_id");
-    soupsSection = document.getElementById("soups_id");
-    dishSection = document.getElementById("dishes_id");
-    lunchSection = document.getElementById("lunch_id");
-    drinksSection = document.getElementById("drinks_id");
-
-    orderSection = document.getElementById("order_id");
     catalogClass = new CatalogClassBuilder()
         .setCategoryClass(this)
         .build();
 
     categoryScreenSetup() {
         this.telegramSetup();
-        this.categorySection.style.display = "grid";
-        this.soupsSection.style.display = "none";
-        this.dishSection.style.display = "none";
-        this.lunchSection.style.display = "none";
-        this.drinksSection.style.display = "none";
-        this.orderSection.style.display = "none";
+        categorySection.style.display = "grid";
+        soupsSection.style.display = "none";
+        dishSection.style.display = "none";
+        lunchSection.style.display = "none";
+        drinksSection.style.display = "none";
+        orderSection.style.display = "none";
         this.onCategoryClick();
     }
 
@@ -38,44 +36,44 @@ class CategoryClass {
         switch (categoryBtnElement) {
             case 0:
                 if (!isSoupActive) {
-                    this.soupsSection.style.display = "grid";
+                    soupsSection.style.display = "grid";
                     isSoupActive = true;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
-                    this.soupsSection.style.display = "none";
+                    soupsSection.style.display = "none";
                     isSoupActive = false;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
             case 1:
                 if (!isDishActive) {
-                    this.dishSection.style.display = "grid";
+                    dishSection.style.display = "grid";
                     isDishActive = true;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
-                    this.dishSection.style.display = "none";
+                    dishSection.style.display = "none";
                     isDishActive = false;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
             case 2:
                 if (!isLunchActive) {
-                    this.lunchSection.style.display = "grid";
+                    lunchSection.style.display = "grid";
                     isLunchActive = true;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
-                    this.lunchSection.style.display = "none";
+                    lunchSection.style.display = "none";
                     isLunchActive = false;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }
                 break;
             case 3:
                 if (!isDrinksActive) {
-                    this.drinksSection.style.display = "grid";
+                    drinksSection.style.display = "grid";
                     isDrinksActive = true;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2191}';
                 } else {
-                    this.drinksSection.style.display = "none";
+                    drinksSection.style.display = "none";
                     isDrinksActive = false;
                     this.categoryBtnList[categoryBtnElement].textContent = '\u{2193}';
                 }

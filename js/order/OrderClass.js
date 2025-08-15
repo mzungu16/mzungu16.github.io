@@ -13,7 +13,7 @@ class OrderClass {
     }
 
     orderScreenSetup() {
-        this.categoryClass.sectionsSetup(sectionList[5]);
+        orderSection.style.display = "grid";
         this.orderTgSetup()
         this.createElements();
         this.onOrderBackButtonClick();
