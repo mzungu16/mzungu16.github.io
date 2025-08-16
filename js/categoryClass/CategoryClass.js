@@ -5,6 +5,7 @@ window.dishSection = document.getElementById("dishes_id");
 window.lunchSection = document.getElementById("lunch_id");
 window.drinksSection = document.getElementById("drinks_id");
 window.orderSection = document.getElementById("order_id");
+window.dishesList = [];
 
 class CategoryClass {
     categoryBtnList = document.querySelectorAll(".category_btn");
@@ -15,11 +16,44 @@ class CategoryClass {
     categoryScreenSetup() {
         this.telegramSetup();
         categorySection.style.display = "grid";
-        soupsSection.style.display = "none";
-        dishSection.style.display = "none";
-        lunchSection.style.display = "none";
-        drinksSection.style.display = "none";
-        orderSection.style.display = "none";
+        switch (true) {
+            case isSoupActive:
+                console.log("Soup active");
+                soupsSection.style.display = "grid";
+                dishSection.style.display = "none";
+                lunchSection.style.display = "none";
+                drinksSection.style.display = "none";
+                orderSection.style.display = "none";
+                break;
+            case isDishActive:
+                soupsSection.style.display = "none";
+                dishSection.style.display = "grid";
+                lunchSection.style.display = "none";
+                drinksSection.style.display = "none";
+                orderSection.style.display = "none";
+                break;
+            case isLunchActive:
+                soupsSection.style.display = "none";
+                dishSection.style.display = "none";
+                lunchSection.style.display = "grid";
+                drinksSection.style.display = "none";
+                orderSection.style.display = "none";
+                break;
+            case isDrinksActive:
+                soupsSection.style.display = "none";
+                dishSection.style.display = "none";
+                lunchSection.style.display = "none";
+                drinksSection.style.display = "grid";
+                orderSection.style.display = "none";
+                break;
+            default:
+                soupsSection.style.display = "none";
+                dishSection.style.display = "none";
+                lunchSection.style.display = "none";
+                drinksSection.style.display = "none";
+                orderSection.style.display = "none";
+                break;
+        }
         this.onCategoryClick();
     }
 
