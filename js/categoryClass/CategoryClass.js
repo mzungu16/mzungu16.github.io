@@ -1,4 +1,3 @@
-console.log("₽ Category launch time");
 let isSoupActive, isDishActive, isLunchActive, isDrinksActive = false;
 window.categorySection = document.getElementById("category_id");
 window.soupsSection = document.getElementById("soups_id");
@@ -6,7 +5,6 @@ window.dishSection = document.getElementById("dishes_id");
 window.lunchSection = document.getElementById("lunch_id");
 window.drinksSection = document.getElementById("drinks_id");
 window.orderSection = document.getElementById("order_id");
-window.dishesList = [];
 
 class CategoryClass {
     categoryBtnList = document.querySelectorAll(".category_btn");
