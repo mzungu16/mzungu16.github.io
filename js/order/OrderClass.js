@@ -30,8 +30,10 @@ class OrderClass {
     }
 
     onOrderBackButtonClick() {
+        console.log(`P DishList length in function - ${dishesList.length}`);
         tg.BackButton.onClick(() => {
             console.log("P - Order > backButton");
+            console.log(`P DishList length after back click - ${dishesList.length}`);
             this.itemList.forEach((item) => {
                 item.remove();
             });
