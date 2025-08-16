@@ -1,4 +1,4 @@
-console.log("Category launch time");
+console.log("₽ Category launch time");
 let isSoupActive, isDishActive, isLunchActive, isDrinksActive = false;
 window.categorySection = document.getElementById("category_id");
 window.soupsSection = document.getElementById("soups_id");
@@ -15,7 +15,7 @@ class CategoryClass {
         .build();
 
     categoryScreenSetup() {
-        console.log("Category screen setup");
+        console.log("₽ Category screen setup");
         this.telegramSetup();
         categorySection.style.display = "grid";
         switch (true) {
