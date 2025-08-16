@@ -37,7 +37,7 @@ class OrderClass {
             this.itemList.forEach((item) => {
                 item.remove();
             });
-            this.itemList.splice(0, this.itemList.length);
+            this.itemList = [];
             this.orderDishList = [];
             console.log(`P order list length - ${dishesList.length}`);
             this.categoryClass.categoryScreenSetup();
