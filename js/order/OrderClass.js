@@ -38,6 +38,7 @@ class OrderClass {
                 item.remove();
             });
             this.itemList.splice(0, this.itemList.length);
+            this.orderDishList = [];
             console.log(`P order list length - ${dishesList.length}`);
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
