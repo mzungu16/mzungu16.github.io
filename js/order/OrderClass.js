@@ -42,6 +42,7 @@ class OrderClass {
             console.log(`P order list length - ${dishesList.length}`);
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
+            window.location.reload();
         });
     }
 
