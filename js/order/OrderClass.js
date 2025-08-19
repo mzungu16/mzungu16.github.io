@@ -35,12 +35,11 @@ class OrderClass {
                 item.remove();
                 console.log("P item removed");
             });
-            orderSection.reload();
             this.itemList.splice(0, this.itemList.length);
             console.log("P itemList", this.itemList.length);
             this.orderDishList = [];
             console.log("P orderList", this.orderDishList.length);
-            this.categoryClass.categoryScreenSetup();
+            // this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
         });
     }
