@@ -139,6 +139,7 @@ class CatalogClass {
     }
 
     onMainBtnClick() {
+        console.log("order isAcrive value before click", isClicked);
         if (!isClicked) {
             tg.MainButton.onClick(() => {
                 console.log("P Create obj order");
