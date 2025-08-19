@@ -1,5 +1,4 @@
 class OrderClass {
-    orderContainerId = document.getElementById("order_id")
     orderResultContainerId = document.getElementById("order_result_container_id");
     orderResultId = document.getElementById("order_result_id");
     orderCommentId = document.getElementById("order_comment_id");
@@ -47,6 +46,7 @@ class OrderClass {
     }
 
     createElements() {
+        console.log("P createElements orderList", this.orderDishList.length);
         this.orderDishList.forEach((item) => {
             this.elementFunction(item);
         });
@@ -87,7 +87,7 @@ class OrderClass {
         this.priceList.push(foodItemResult);
         this.orderComment = this.orderCommentId.textContent;
 
-        this.orderContainerId.insertBefore(orderFoodItem, this.orderResultContainerId);
+        orderSection.insertBefore(orderFoodItem, this.orderResultContainerId);
         orderFoodItem.append(orderImageContainer);
         orderImageContainer.append(orderImageValue);
         orderFoodItem.append(orderFoodTxtContainer);
