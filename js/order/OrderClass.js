@@ -43,7 +43,7 @@ class OrderClass {
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
         });
-        tg.BackButton.offClick();
+        orderSection.reload();
     }
 
     createElements() {
