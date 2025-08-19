@@ -39,7 +39,7 @@ class OrderClass {
                 item.remove();
             });
             this.itemList.splice(0, this.itemList.length);
-            this.orderDishList.splice(0, this.orderDishList.length);
+            this.orderDishList =[];
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
         });
