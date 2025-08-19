@@ -12,7 +12,7 @@ class CatalogClass {
         ADD_CARD: "addCard",
         DECREASE_CARD: "decrementCard"
     };
-    order = new OrderClassBuilder().build();
+    order = null;
     itemPictureList = document.querySelectorAll(".food_image")
     itemTitleList = document.querySelectorAll(".food_title_txt");
     itemDescList = document.querySelectorAll(".food_desc_txt");
@@ -141,6 +141,7 @@ class CatalogClass {
     onMainBtnClick() {
         if (!isClicked) {
             tg.MainButton.onClick(() => {
+                console.log("P Create obj order");
                 this.order = new OrderClassBuilder()
                     .setCategoryClass(this.categoryClass)
                     .setOrderDishList(dishesList)
