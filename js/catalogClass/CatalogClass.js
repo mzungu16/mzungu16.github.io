@@ -1,5 +1,3 @@
-let isClicked = false;
-
 class CatalogClass {
     addCardBtnList = document.querySelectorAll(".food_btn");
     decrementBtnList = document.querySelectorAll(".food_decr_btn");
@@ -139,8 +137,8 @@ class CatalogClass {
     }
 
     onMainBtnClick() {
-        console.log("order isAcrive value before click", isClicked);
-        if (!isClicked) {
+        console.log("order isAcrive value before click", isMainButtonClick);
+        if (!isMainButtonClick) {
             tg.MainButton.onClick(() => {
                 console.log("P Create obj order");
                 this.order = new OrderClassBuilder()
@@ -148,7 +146,7 @@ class CatalogClass {
                     .setOrderDishList(dishesList)
                     .build();
                 this.order.orderScreenSetup();
-                isClicked = true;
+                isMainButtonClick = true;
             });
         } else {
             this.order.orderUpdateList(dishesList);
