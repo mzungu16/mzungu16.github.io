@@ -34,15 +34,16 @@ class OrderClass {
             console.log("P - Order > backButton");
             this.itemList.forEach((item) => {
                 item.remove();
+                console.log("P item removed");
             });
             this.itemList.splice(0, this.itemList.length);
             console.log("P itemList", this.itemList.length);
             this.orderDishList = [];
-            console.log("P itemList", this.orderDishList.length);
+            console.log("P orderList", this.orderDishList.length);
             this.categoryClass.categoryScreenSetup();
-            orderSection.style.display = "none";
             tg.BackButton.hide();
         });
+        tg.BackButton.offClick();
     }
 
     createElements() {
