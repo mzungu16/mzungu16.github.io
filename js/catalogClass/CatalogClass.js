@@ -143,6 +143,7 @@ class CatalogClass {
                 .setOrderDishList(dishesList)
                 .build();
             this.order.orderScreenSetup();
+            orderSection.reload();
         });
     }
 }

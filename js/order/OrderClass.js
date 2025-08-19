@@ -41,7 +41,6 @@ class OrderClass {
             console.log("P orderList", this.orderDishList.length);
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
-            orderSection.innerHTML = "";
         });
     }
 
