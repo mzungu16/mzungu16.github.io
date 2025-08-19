@@ -149,6 +149,7 @@ class CatalogClass {
                 isMainButtonClick = true;
             } else {
                 this.order.orderUpdateList(dishesList);
+                this.order.orderScreenSetup();
             }
         });
     }
