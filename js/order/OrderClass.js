@@ -35,6 +35,7 @@ class OrderClass {
                 item.remove();
                 console.log("P item removed");
             });
+            orderSection.reload();
             this.itemList.splice(0, this.itemList.length);
             console.log("P itemList", this.itemList.length);
             this.orderDishList = [];
