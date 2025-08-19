@@ -30,19 +30,18 @@ class OrderClass {
     }
 
     onOrderBackButtonClick() {
-        console.log(`P DishList length in function - ${dishesList.length}`);
         tg.BackButton.onClick(() => {
             console.log("P - Order > backButton");
-            console.log(`P DishList length after back click - ${dishesList.length}`);
             this.itemList.forEach((item) => {
                 item.remove();
             });
             this.itemList.splice(0, this.itemList.length);
+            console.log("P itemList", this.itemList.length);
             this.orderDishList = [];
-            console.log(`P order list length - ${dishesList.length}`);
+            console.log("P itemList", this.orderDishList.length);
             this.categoryClass.categoryScreenSetup();
+            orderSection.style.display = "none";
             tg.BackButton.hide();
-            window.location.reload();
         });
     }
 
