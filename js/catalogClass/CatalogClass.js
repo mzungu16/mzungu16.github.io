@@ -138,8 +138,8 @@ class CatalogClass {
 
     onMainBtnClick() {
         console.log("order isAcrive value before click", isMainButtonClick);
-        tg.MainButton.onClick(() => {
-            if (!isMainButtonClick) {
+        if (!isMainButtonClick) {
+            tg.MainButton.onClick(() => {
                 console.log("P Create obj order");
                 this.order = new OrderClassBuilder()
                     .setCategoryClass(this.categoryClass)
@@ -147,10 +147,9 @@ class CatalogClass {
                     .build();
                 this.order.orderScreenSetup();
                 isMainButtonClick = true;
-            } else {
-                this.order.orderUpdateList(dishesList);
-                this.order.orderScreenSetup();
-            }
-        });
+            });
+        } else {
+            this.order.orderUpdateList(dishesList);
+        }
     }
 }
