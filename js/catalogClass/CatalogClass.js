@@ -138,6 +138,7 @@ class CatalogClass {
 
     onMainBtnClick() {
         tg.MainButton.onClick(() => {
+            orderSection.reload();
             this.order = new OrderClassBuilder()
                 .setCategoryClass(this.categoryClass)
                 .setOrderDishList(dishesList)
