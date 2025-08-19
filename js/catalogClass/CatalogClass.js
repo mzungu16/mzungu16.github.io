@@ -1,3 +1,5 @@
+let isClicked = false;
+
 class CatalogClass {
     addCardBtnList = document.querySelectorAll(".food_btn");
     decrementBtnList = document.querySelectorAll(".food_decr_btn");
@@ -137,12 +139,17 @@ class CatalogClass {
     }
 
     onMainBtnClick() {
-        tg.MainButton.onClick(() => {
-            this.order = new OrderClassBuilder()
-                .setCategoryClass(this.categoryClass)
-                .setOrderDishList(dishesList)
-                .build();
-            this.order.orderScreenSetup();
-        });
+        if (!isClicked) {
+            tg.MainButton.onClick(() => {
+                this.order = new OrderClassBuilder()
+                    .setCategoryClass(this.categoryClass)
+                    .setOrderDishList(dishesList)
+                    .build();
+                this.order.orderScreenSetup();
+                isClicked = true;
+            });
+        } else {
+            this.order.orderUpdateList(dishesList);
+        }
     }
 }

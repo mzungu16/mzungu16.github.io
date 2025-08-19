@@ -23,6 +23,10 @@ class OrderClass {
         this.onOrderBackButtonClick();
     }
 
+    orderUpdateList(orderParamList) {
+        this.orderDishList = orderParamList;
+    }
+
     orderTgSetup() {
         tg.BackButton.show();
         tg.MainButton.text = "Оплатить";
