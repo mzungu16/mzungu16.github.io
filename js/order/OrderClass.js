@@ -43,11 +43,10 @@ class OrderClass {
         tg.BackButton.onClick(() => {
             console.log("P - Order > backButton");
             this.itemList.forEach((item) => {
-                item.remove();
+                orderSection.removeChild(item);
             });
             this.itemList.splice(0, this.itemList.length);
             this.orderDishList = [];
-            orderSection.reload();
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
         });
