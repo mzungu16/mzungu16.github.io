@@ -20,6 +20,7 @@ class OrderClass {
     orderUpdateList(orderParamList) {
         this.orderVisibilitySetup();
         this.orderDishList = orderParamList;
+        this.createElements();
         this.onOrderBackButtonClick();
     }
 
