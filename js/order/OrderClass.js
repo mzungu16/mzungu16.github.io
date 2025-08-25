@@ -12,6 +12,18 @@ class OrderClass {
     }
 
     orderScreenSetup() {
+        this.orderVisibilitySetup();
+        this.createElements();
+        this.onOrderBackButtonClick();
+    }
+
+    orderUpdateList(orderParamList) {
+        this.orderVisibilitySetup();
+        this.orderDishList = orderParamList;
+        this.onOrderBackButtonClick();
+    }
+
+    orderVisibilitySetup() {
         categorySection.style.display = "none";
         soupsSection.style.display = "none";
         dishSection.style.display = "none";
@@ -19,12 +31,6 @@ class OrderClass {
         drinksSection.style.display = "none";
         orderSection.style.display = "grid";
         this.orderTgSetup()
-        this.createElements();
-        this.onOrderBackButtonClick();
-    }
-
-    orderUpdateList(orderParamList) {
-        this.orderDishList = orderParamList;
     }
 
     orderTgSetup() {
@@ -39,7 +45,7 @@ class OrderClass {
                 item.remove();
             });
             this.itemList.splice(0, this.itemList.length);
-            this.orderDishList =[];
+            this.orderDishList = [];
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
         });
