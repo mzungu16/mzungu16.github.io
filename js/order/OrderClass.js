@@ -20,7 +20,6 @@ class OrderClass {
     orderUpdateList(orderParamList) {
         this.orderVisibilitySetup();
         this.orderDishList = orderParamList;
-        orderSection.reload();
         this.createElements();
         this.onOrderBackButtonClick();
     }
@@ -48,6 +47,7 @@ class OrderClass {
             });
             this.itemList.splice(0, this.itemList.length);
             this.orderDishList = [];
+            orderSection.reload();
             this.categoryClass.categoryScreenSetup();
             tg.BackButton.hide();
         });
